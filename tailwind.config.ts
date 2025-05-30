@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -25,48 +26,50 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					DEFAULT: '#345890',
+					foreground: '#FFFFFF'
 				},
 				secondary: {
-					DEFAULT: 'hsl(var(--secondary))',
-					foreground: 'hsl(var(--secondary-foreground))'
+					DEFAULT: '#F0F4F8',
+					foreground: '#0F172A'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
 					foreground: 'hsl(var(--destructive-foreground))'
 				},
 				muted: {
-					DEFAULT: 'hsl(var(--muted))',
-					foreground: 'hsl(var(--muted-foreground))'
+					DEFAULT: '#F0F4F8',
+					foreground: '#0F172A'
 				},
 				accent: {
-					DEFAULT: 'hsl(var(--accent))',
-					foreground: 'hsl(var(--accent-foreground))'
+					DEFAULT: '#F0F4F8',
+					foreground: '#0F172A'
 				},
 				popover: {
-					DEFAULT: 'hsl(var(--popover))',
-					foreground: 'hsl(var(--popover-foreground))'
+					DEFAULT: '#FFFFFF',
+					foreground: '#0F172A'
 				},
 				card: {
-					DEFAULT: 'hsl(var(--card))',
-					foreground: 'hsl(var(--card-foreground))'
+					DEFAULT: '#FFFFFF',
+					foreground: '#0F172A'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// White Shoe AI Brand Colors
+				'midnight-brief': '#0F172A',
+				'slate-docket': '#345890',
+				'ice-fog': '#F0F4F8',
+				'pure-white': '#FFFFFF',
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: '1.5rem', // 24px as per brand system
+				md: 'calc(1.5rem - 2px)',
+				sm: 'calc(1.5rem - 4px)'
+			},
+			fontFamily: {
+				'garamond': ['EB Garamond', 'serif'],
+				'inter': ['Inter', 'sans-serif'],
+			},
+			letterSpacing: {
+				'garamond': '-0.025em', // -1 tracking for Garamond display
 			},
 			keyframes: {
 				'accordion-down': {
@@ -84,11 +87,29 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-up': {
+					from: {
+						opacity: '0',
+						transform: 'translateY(40px)'
+					},
+					to: {
+						opacity: '1',
+						transform: 'translateY(0)'
+					}
+				},
+				'ripple': {
+					to: {
+						transform: 'scale(4)',
+						opacity: '0'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-up': 'fade-up 0.35s ease-out',
+				'ripple': 'ripple 600ms linear'
 			}
 		}
 	},

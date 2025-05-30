@@ -1,14 +1,249 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Link } from "react-router-dom";
+import { 
+  MessageSquare, 
+  Search, 
+  Workflow, 
+  ArrowRight, 
+  CheckCircle,
+  TrendingUp,
+  Shield,
+  Zap,
+  Users,
+  Building2,
+  Briefcase
+} from "lucide-react";
+
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-pure-white">
+      <Header />
+      
+      {/* Hero Section */}
+      <section className="relative isolate px-6 pt-14 lg:px-8">
+        <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+          <div className="text-center animate-fade-up">
+            <h1 className="text-4xl font-bold tracking-garamond text-midnight-brief sm:text-6xl">
+              Your AI Associate—ready in minutes, priced for every legal team.
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Stop the AI arms race. Equip your team today.
+            </p>
+            <div className="mt-10 flex items-center justify-center gap-x-6">
+              <Link to="/contact">
+                <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 text-lg btn-ripple">
+                  Get a Demo
+                </Button>
+              </Link>
+              <Link to="/platform" className="text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
+                Learn more <span aria-hidden="true">→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem/Insight Section */}
+      <section className="py-24 sm:py-32 bg-ice-fog">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-base font-semibold leading-7 text-slate-docket">The AI Divide</h2>
+            <p className="mt-2 text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              Less than 10% of mid-market legal teams can afford current AI tools
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              While BigLaw firms spend millions on AI infrastructure, smaller legal teams are left behind. 
+              White Shoe AI democratizes advanced legal AI for teams of every size.
+            </p>
+            <div className="mt-8">
+              <Button variant="outline" className="border-slate-docket text-slate-docket hover:bg-slate-docket hover:text-pure-white">
+                Read The AI Divide White Paper
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              Three AI Associates, One Platform
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Everything you need to supercharge your legal team's productivity
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-3 lg:gap-y-16">
+              <div className="relative pl-16">
+                <dt className="text-base font-semibold leading-7 text-midnight-brief">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
+                    <MessageSquare className="h-6 w-6 text-pure-white" aria-hidden="true" />
+                  </div>
+                  Co-Counsel Chat
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-gray-600">
+                  Get instant answers to complex legal questions. Our AI understands context and provides detailed, accurate responses.
+                </dd>
+              </div>
+              <div className="relative pl-16">
+                <dt className="text-base font-semibold leading-7 text-midnight-brief">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
+                    <Search className="h-6 w-6 text-pure-white" aria-hidden="true" />
+                  </div>
+                  Issue Spotter
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-gray-600">
+                  Automatically identify potential legal issues in contracts and documents before they become problems.
+                </dd>
+              </div>
+              <div className="relative pl-16">
+                <dt className="text-base font-semibold leading-7 text-midnight-brief">
+                  <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
+                    <Workflow className="h-6 w-6 text-pure-white" aria-hidden="true" />
+                  </div>
+                  Workflow Automation
+                </dt>
+                <dd className="mt-2 text-base leading-7 text-gray-600">
+                  Streamline repetitive tasks and integrate seamlessly with your existing tools and processes.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 sm:py-32 bg-ice-fog">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              How It Works
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Get up and running in minutes, not months
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-4">
+              {[
+                { step: "1", title: "Connect", description: "Link your documents and integrate with Slack/Teams" },
+                { step: "2", title: "Ask", description: "Query your AI associate using natural language" },
+                { step: "3", title: "Review", description: "Get detailed analysis and recommendations" },
+                { step: "4", title: "Export", description: "Generate reports and share insights with your team" }
+              ].map((item, index) => (
+                <div key={item.step} className="flex flex-col items-center text-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-slate-docket text-pure-white font-bold text-lg">
+                    {item.step}
+                  </div>
+                  <h3 className="mt-6 text-lg font-semibold text-midnight-brief">{item.title}</h3>
+                  <p className="mt-2 text-gray-600">{item.description}</p>
+                  {index < 3 && (
+                    <ArrowRight className="hidden lg:block absolute top-6 left-full transform translate-x-4 h-6 w-6 text-slate-docket" />
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Value/ROI Section */}
+      <section className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              Measurable Impact
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              See real results from day one
+            </p>
+          </div>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <Card className="bg-slate-docket text-pure-white">
+              <CardContent className="p-8">
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold">ROI Calculator</h3>
+                  <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+                    <div>
+                      <p className="text-4xl font-bold">8 hrs</p>
+                      <p className="text-sm opacity-90">saved per attorney/week</p>
+                    </div>
+                    <div>
+                      <p className="text-4xl font-bold">15×</p>
+                      <p className="text-sm opacity-90">return on investment</p>
+                    </div>
+                    <div>
+                      <p className="text-4xl font-bold">$50K+</p>
+                      <p className="text-sm opacity-90">annual savings per team</p>
+                    </div>
+                  </div>
+                  <div className="mt-8">
+                    <Link to="/contact">
+                      <Button variant="outline" className="border-pure-white text-pure-white hover:bg-pure-white hover:text-slate-docket">
+                        Calculate Your ROI
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Social Proof Section */}
+      <section className="py-24 sm:py-32 bg-ice-fog">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              Trusted by Legal Teams
+            </h2>
+          </div>
+          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            {[
+              {
+                quote: "White Shoe AI transformed our contract review process. What used to take days now takes hours.",
+                author: "Sarah Chen",
+                role: "General Counsel",
+                company: "TechCorp"
+              },
+              {
+                quote: "Finally, enterprise-grade AI that doesn't require an enterprise budget.",
+                author: "Michael Rodriguez",
+                role: "Legal Director", 
+                company: "GrowthCo"
+              },
+              {
+                quote: "The integration with our existing tools was seamless. Our team was productive from day one.",
+                author: "Jennifer Walsh",
+                role: "VP Legal",
+                company: "InnovateLtd"
+              }
+            ].map((testimonial, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <blockquote className="text-gray-600 mb-6">
+                    "{testimonial.quote}"
+                  </blockquote>
+                  <div>
+                    <p className="font-semibold text-midnight-brief">{testimonial.author}</p>
+                    <p className="text-sm text-gray-500">{testimonial.role}, {testimonial.company}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
-};
-
-export default Index;
+}
