@@ -1,11 +1,10 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { CheckCircle, Star, Building2, Users, Zap } from "lucide-react";
+import { CheckCircle, Star, Building2, Users, Zap, TrendingUp } from "lucide-react";
 
 const plans = [
   {
