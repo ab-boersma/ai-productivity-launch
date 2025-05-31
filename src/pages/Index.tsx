@@ -1,5 +1,3 @@
-
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -193,27 +191,19 @@ export default function Index() {
             <Card className="bg-slate-docket text-pure-white">
               <CardContent className="p-8">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold">ROI Calculator</h3>
-                  <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
+                  <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
                     <div>
                       <p className="text-4xl font-bold">130</p>
-                      <p className="text-sm opacity-90">pages of work product per White Shoe Billable Hour</p>
+                      <p className="text-sm opacity-90 leading-relaxed">pages of work product per White Shoe Billable Hour</p>
                     </div>
                     <div>
                       <p className="text-4xl font-bold">20</p>
-                      <p className="text-sm opacity-90">Practice Areas to support your every need</p>
+                      <p className="text-sm opacity-90 leading-relaxed">Practice Areas to support your every need</p>
                     </div>
                     <div>
                       <p className="text-4xl font-bold">$19</p>
-                      <p className="text-sm opacity-90">a monthly price that enables support for everyone</p>
+                      <p className="text-sm opacity-90 leading-relaxed">a monthly price that enables support for everyone</p>
                     </div>
-                  </div>
-                  <div className="mt-8">
-                    <Link to="/pricing">
-                      <Button variant="outline" className="border-pure-white text-pure-white hover:bg-pure-white hover:text-slate-docket">
-                        Pricing
-                      </Button>
-                    </Link>
                   </div>
                 </div>
               </CardContent>
