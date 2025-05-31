@@ -92,7 +92,7 @@ const plans = [
 const faqs = [
   {
     question: "How do \"Billable Hours\" work on White Shoe AI, and what happens if I exceed my monthly allotment?",
-    answer: "A White Shoe Billable Hour isn't a stopwatch—it's output. One hour represents roughly 125 pages of finished work product (drafts, analyses, briefs). When you hit your cap: Clerk & Junior Associate: buy add-on hour packs or wait for next month's refresh. Senior Associate: set an auto-top-up limit or add packs on demand. Partner: deep-research tools consume hours faster; your Customer Success Manager will warn you and can expand capacity the same day. Unused hours expire at month-end, but you can upgrade any time and we'll prorate the difference."
+    answer: "A White Shoe Billable Hour isn't a stopwatch—it's output. One hour represents roughly 125 pages of finished work product (drafts, analyses, briefs). When you hit your cap, additional hours are available for purchase for less than 0.5% of the cost of an law firm associate to support your work."
   },
   {
     question: "What's the difference between Clerk, Junior Associate, Senior Associate, and Partner plans?",
