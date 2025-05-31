@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,7 +15,10 @@ import {
   Zap,
   Users,
   Building2,
-  Briefcase
+  Briefcase,
+  Document as DocumentIcon,
+  Grid2X2 as Grid2X2Icon,
+  DollarSign as DollarSignIcon
 } from "lucide-react";
 
 export default function Index() {
