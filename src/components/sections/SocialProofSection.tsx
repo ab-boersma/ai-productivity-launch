@@ -3,19 +3,19 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    quote: "White Shoe AI transformed our contract review process. What used to take days now takes hours.",
+    quote: "White Shoe streamlines our legal analysis and document drafting in ways I never thought possible. My team is easily 3x more productive, and the quality of our output has improved dramatically.",
     author: "Sarah Chen",
     role: "General Counsel",
     company: "TechCorp"
   },
   {
-    quote: "Finally, enterprise-grade AI that doesn't require an enterprise budget.",
+    quote: "Unlike other legal AI tools that require extensive training and setup, this solution was intuitive from day one and knows our business. Finally, an AI platform that understands how legal teams actually work.",
     author: "Michael Rodriguez",
     role: "Legal Director", 
     company: "GrowthCo"
   },
   {
-    quote: "The integration with our existing tools was seamless. Our team was productive from day one.",
+    quote: "We evaluated several legal AI platforms, but this was the only one that didn't feel like we needed a computer science degree to use effectively. The accessibility and the price is unmatched.",
     author: "Jennifer Walsh",
     role: "VP Legal",
     company: "InnovateLtd"
