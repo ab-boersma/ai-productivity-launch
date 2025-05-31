@@ -148,7 +148,7 @@ export default function Index() {
                 },
                 { 
                   title: "Seamless Integration", 
-                  description: "Lives inside Slack, Outlook, Word, and more—no workflow disruption." 
+                  description: "Integrations with Slack, Outlook, Google, and more—no workflow disruption to power you forward." 
                 },
                 { 
                   title: "Secure & Compliant", 
