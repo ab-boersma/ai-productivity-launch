@@ -192,49 +192,6 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* ROI Calculator */}
-      <section className="py-24 sm:py-32 bg-ice-fog">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Calculate Your ROI
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              See how much your team can save with White Shoe AI
-            </p>
-          </div>
-          
-          <Card className="max-w-4xl mx-auto">
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <div className="text-4xl font-bold text-slate-docket mb-2">8 hrs</div>
-                  <div className="text-sm text-gray-600 mb-4">Saved per attorney/week</div>
-                  <div className="text-xs text-gray-500">Average time savings on contract review, research, and document analysis</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-slate-docket mb-2">15×</div>
-                  <div className="text-sm text-gray-600 mb-4">Return on investment</div>
-                  <div className="text-xs text-gray-500">Based on billable hour value vs. subscription cost</div>
-                </div>
-                <div>
-                  <div className="text-4xl font-bold text-slate-docket mb-2">$50K+</div>
-                  <div className="text-sm text-gray-600 mb-4">Annual savings per team</div>
-                  <div className="text-xs text-gray-500">Includes efficiency gains and reduced external counsel costs</div>
-                </div>
-              </div>
-              <div className="mt-8 text-center">
-                <Link to="/contact">
-                  <Button variant="outline" className="border-slate-docket text-slate-docket hover:bg-slate-docket hover:text-pure-white">
-                    Get Custom ROI Analysis
-                  </Button>
-                </Link>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
