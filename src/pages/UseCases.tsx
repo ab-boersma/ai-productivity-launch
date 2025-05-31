@@ -700,18 +700,12 @@ export default function UseCases() {
               Ready to Transform Your {selectedPracticeArea === "All Practice Areas" ? "Legal Practice" : selectedPracticeArea}?
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              {selectedPracticeArea === "All Practice Areas" 
-                ? "Join legal teams across all practice areas that are already saving 8+ hours per week with White Shoe AI."
-                : `See how our specialized AI associates transform ${selectedPracticeArea} workflows for legal teams like yours.`
-              }
+              Join legal teams that are already increasing their productivity by 10x per week with White Shoe.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link to="/contact">
                 <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 text-lg btn-ripple">
-                  {selectedPracticeArea === "All Practice Areas" 
-                    ? "Start Free Trial" 
-                    : `Get ${selectedPracticeArea} Demo`
-                  }
+                  Sign Up
                 </Button>
               </Link>
               <Link to="/platform" className="text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
