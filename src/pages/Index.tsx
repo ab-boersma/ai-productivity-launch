@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -134,7 +135,7 @@ export default function Index() {
               {[
                 { 
                   title: "Accessible AI", 
-                  description: "Enterprise-grade legal support at a starting price every lawyer can afford." 
+                  description: "Enterprise-grade legal support at a starting price every lawyer can access." 
                 },
                 { 
                   title: "Practice-Area Precision", 
