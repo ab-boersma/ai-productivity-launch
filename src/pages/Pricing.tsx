@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -106,11 +107,10 @@ export default function Pricing() {
           <div className="text-center animate-fade-up">
             <Badge className="mb-6 bg-slate-docket text-pure-white">Pricing</Badge>
             <h1 className="text-4xl font-bold tracking-garamond text-midnight-brief sm:text-6xl">
-              White-shoe calibre, startup speed pricing
+              White Shoe caliber support, accessible pricing for every lawyer.
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Choose the plan that fits your team size and needs. All plans include unlimited drafts, 
-              SOC 2 compliance, and 99.9% uptime guarantee.
+              Accessible pricing for every lawyer. Choose the plan that fits your needs.
             </p>
           </div>
         </div>
