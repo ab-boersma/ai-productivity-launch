@@ -31,7 +31,7 @@ export default function Index() {
               Your AI Legal Support – ready in minutes, priced for every legal team
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Safe AI legal tools within reach for every lawyer. Get equipped today.
+              Safe AI legal tools within reach for every lawyer.<br />Get equipped today.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link to="/contact">
