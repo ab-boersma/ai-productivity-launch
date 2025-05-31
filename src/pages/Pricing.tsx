@@ -1,71 +1,90 @@
 
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Link } from "react-router-dom";
 import { CheckCircle, Star, Building2, Users, Zap, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
 const plans = [
   {
-    name: "Solo",
-    seats: "1-3 seats",
-    price: "$199",
-    period: "/month",
-    description: "Perfect for fractional GCs and small legal teams",
+    name: "Clerk",
+    seats: "1 user",
+    monthlyPrice: "$24",
+    yearlyPrice: "$19",
+    description: "Essential legal support for solo practitioners",
     icon: Users,
     popular: false,
     features: [
-      "3 AI Associate seats",
-      "Unlimited document analysis",
-      "Basic integrations (Slack, Teams)",
-      "Standard support",
-      "SOC 2 compliance",
-      "99.9% uptime SLA",
-      "Email support"
+      "Basic contract review",
+      "Document analysis",
+      "Legal research assistance",
+      "Email support",
+      "Standard templates",
+      "Basic integrations"
     ]
   },
   {
-    name: "Growth",
-    seats: "4-15 seats", 
-    price: "$799",
-    period: "/month",
-    description: "Ideal for Series B scale-ups and growing legal teams",
+    name: "Junior Associate",
+    seats: "Up to 5 users", 
+    monthlyPrice: "$49",
+    yearlyPrice: "$39",
+    description: "Expanded capabilities for growing legal teams",
     icon: TrendingUp,
     popular: true,
     features: [
-      "15 AI Associate seats",
+      "Advanced contract review",
       "Unlimited document analysis",
-      "Advanced integrations + API access",
+      "Legal research & writing",
       "Priority support",
-      "SOC 2 compliance",
-      "99.9% uptime SLA",
-      "Custom workflows",
-      "Advanced analytics",
-      "Dedicated onboarding"
+      "Custom templates",
+      "Advanced integrations",
+      "Team collaboration tools",
+      "Basic analytics"
     ]
   },
   {
-    name: "Corporate",
-    seats: "16-50+ seats",
-    price: "Custom",
-    period: "",
-    description: "Enterprise solution for public companies and large legal departments",
+    name: "Senior Associate",
+    seats: "Up to 15 users",
+    monthlyPrice: "$99",
+    yearlyPrice: "$79",
+    description: "Advanced support for established legal teams",
+    icon: Zap,
+    popular: false,
+    features: [
+      "Expert contract negotiation",
+      "Unlimited document analysis",
+      "Advanced legal research",
+      "24/7 priority support",
+      "Custom AI training",
+      "Full integration suite",
+      "Advanced analytics",
+      "Dedicated onboarding",
+      "Compliance monitoring"
+    ]
+  },
+  {
+    name: "Partner",
+    seats: "Unlimited users",
+    monthlyPrice: "$249",
+    yearlyPrice: "$199",
+    description: "Full enterprise solution for large firms",
     icon: Building2,
     popular: false,
     features: [
-      "Unlimited AI Associate seats",
-      "Unlimited document analysis", 
-      "Full integration suite + white-label API",
-      "24/7 premium support",
-      "SOC 2 + custom compliance",
-      "99.99% uptime SLA",
+      "White-label AI solutions",
+      "Unlimited everything",
       "Custom AI model training",
+      "Dedicated success manager",
+      "Enterprise integrations",
       "Advanced security features",
-      "Dedicated customer success manager",
-      "On-premise deployment option"
+      "Custom compliance",
+      "On-premise deployment",
+      "API access",
+      "Priority feature requests"
     ]
   }
 ];
@@ -98,6 +117,8 @@ const faqs = [
 ];
 
 export default function Pricing() {
+  const [billingPeriod, setBillingPeriod] = useState<"monthly" | "yearly">("monthly");
+
   return (
     <div className="min-h-screen bg-pure-white">
       <Header />
@@ -117,10 +138,38 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Pricing Cards */}
-      <section className="py-24 sm:py-32">
+      {/* Pricing Toggle */}
+      <section className="pb-8">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 xl:gap-x-12">
+          <div className="flex justify-center mb-8">
+            <ToggleGroup 
+              type="single" 
+              value={billingPeriod} 
+              onValueChange={(value) => value && setBillingPeriod(value as "monthly" | "yearly")}
+              className="bg-ice-fog rounded-lg p-1"
+            >
+              <ToggleGroupItem 
+                value="monthly" 
+                className="px-6 py-3 data-[state=on]:bg-pure-white data-[state=on]:shadow-sm"
+              >
+                Monthly
+              </ToggleGroupItem>
+              <ToggleGroupItem 
+                value="yearly" 
+                className="px-6 py-3 data-[state=on]:bg-pure-white data-[state=on]:shadow-sm"
+              >
+                Yearly
+                <Badge className="ml-2 bg-green-100 text-green-800 text-xs">Save 20%</Badge>
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </div>
+        </div>
+      </section>
+
+      {/* Pricing Cards */}
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-x-8 xl:gap-x-12">
             {plans.map((plan) => (
               <Card key={plan.name} className={`relative hover:shadow-lg transition-shadow ${plan.popular ? 'ring-2 ring-slate-docket' : ''}`}>
                 {plan.popular && (
@@ -143,11 +192,16 @@ export default function Pricing() {
                   </div>
                   <div className="mt-6">
                     <span className="text-4xl font-bold tracking-tight text-midnight-brief">
-                      {plan.price}
+                      {billingPeriod === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
                     </span>
                     <span className="text-sm font-semibold leading-6 text-gray-600">
-                      {plan.period}
+                      /month
                     </span>
+                    {billingPeriod === "yearly" && (
+                      <div className="text-sm text-gray-500 mt-1">
+                        Billed annually
+                      </div>
+                    )}
                   </div>
                   <CardDescription className="mt-4 text-base">
                     {plan.description}
@@ -169,7 +223,7 @@ export default function Pricing() {
                         : 'bg-midnight-brief hover:bg-midnight-brief/90 text-pure-white'
                       } btn-ripple`}
                     >
-                      {plan.name === "Corporate" ? "Contact Sales" : "Start Free Trial"}
+                      Sign Up
                     </Button>
                   </Link>
                 </CardContent>
@@ -259,7 +313,7 @@ export default function Pricing() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link to="/contact">
                 <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 text-lg btn-ripple">
-                  Start Free Trial
+                  Sign Up
                 </Button>
               </Link>
               <Link to="/platform" className="text-sm font-semibold leading-6 text-gray-300 hover:text-pure-white transition-colors">
@@ -274,4 +328,3 @@ export default function Pricing() {
     </div>
   );
 }
-
