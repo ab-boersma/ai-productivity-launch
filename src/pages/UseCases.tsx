@@ -1,264 +1,258 @@
 
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { 
-  FileText, 
-  Shield, 
-  Users,
-  CheckCircle,
-  Clock,
-  TrendingUp,
-  Building2,
-  Briefcase,
-  ShoppingCart
-} from "lucide-react";
+import { ChevronDown, ChevronRight, Briefcase, Users, Bot } from "lucide-react";
 
-const useCases = [
+const practiceAreas = [
   {
-    id: "contract-review",
-    title: "Contract Review",
-    description: "Accelerate contract analysis and risk assessment",
-    icon: FileText,
-    departments: ["Legal", "Sales"],
-    pain: "Manual contract review takes days and misses critical issues",
-    play: "AI-powered analysis identifies risks and suggests improvements in minutes",
-    payoff: "75% faster contract turnaround, 90% reduction in overlooked risks",
-    features: [
-      "Automated clause analysis",
-      "Risk scoring and prioritization", 
-      "Redline suggestions",
-      "Compliance checking",
-      "Template standardization"
-    ]
+    id: "corporate",
+    title: "Corporate & Commercial Law",
+    description: "Comprehensive corporate legal services for complex business transactions and strategic initiatives.",
+    associates: ["Contract Analysis Assistant", "Due Diligence Coordinator", "Merger Documentation Specialist"]
   },
   {
-    id: "compliance-navigator",
-    title: "Compliance Navigator", 
-    description: "Stay ahead of regulatory requirements across jurisdictions",
-    icon: Shield,
-    departments: ["Legal", "Ops"],
-    pain: "Tracking compliance across multiple jurisdictions is complex and error-prone",
-    play: "AI monitors regulatory changes and maps requirements to your operations",
-    payoff: "100% compliance tracking coverage, 60% reduction in audit preparation time",
-    features: [
-      "Regulatory change monitoring",
-      "Compliance gap analysis",
-      "Automated reporting",
-      "Audit trail generation",
-      "Multi-jurisdiction support"
-    ]
+    id: "emerging-companies",
+    title: "Emerging Companies & Venture Capital",
+    description: "Supporting startups and growth companies through funding rounds and strategic partnerships.",
+    associates: ["Term Sheet Analyzer", "Cap Table Manager", "Investor Relations Assistant"]
   },
   {
-    id: "board-governance",
-    title: "Board & Governance",
-    description: "Streamline board meetings and governance processes",
-    icon: Users,
-    departments: ["Legal", "Ops"],
-    pain: "Board packet preparation and governance tasks consume excessive time",
-    play: "Automated document generation and governance workflow management",
-    payoff: "50% reduction in board prep time, 100% governance compliance tracking",
-    features: [
-      "Board packet automation",
-      "Meeting minute generation",
-      "Governance calendar",
-      "Compliance dashboards",
-      "Document version control"
-    ]
+    id: "litigation",
+    title: "Litigation & Dispute Resolution",
+    description: "Strategic litigation support and dispute resolution across all practice areas.",
+    associates: ["Discovery Assistant", "Brief Writing Specialist", "Case Strategy Analyzer"]
+  },
+  {
+    id: "intellectual-property",
+    title: "Intellectual Property",
+    description: "Protecting and monetizing intellectual property assets in the digital age.",
+    associates: ["Patent Research Assistant", "Trademark Filing Specialist", "IP Portfolio Manager"]
+  },
+  {
+    id: "employment",
+    title: "Employment & Labor Law",
+    description: "Comprehensive employment law guidance for modern workplace challenges.",
+    associates: ["Policy Review Assistant", "Compliance Monitor", "Employee Relations Specialist"]
+  },
+  {
+    id: "compensation",
+    title: "Compensation & Benefits",
+    description: "Designing competitive compensation structures and benefit programs.",
+    associates: ["Benefits Analysis Tool", "Equity Plan Assistant", "Compliance Checker"]
+  },
+  {
+    id: "real-estate",
+    title: "Real Estate",
+    description: "Full-service real estate legal support for commercial and residential transactions.",
+    associates: ["Property Due Diligence Assistant", "Lease Analysis Tool", "Zoning Research Specialist"]
+  },
+  {
+    id: "tax",
+    title: "Tax",
+    description: "Strategic tax planning and compliance for individuals and businesses.",
+    associates: ["Tax Code Navigator", "Planning Strategy Assistant", "Compliance Monitor"]
+  },
+  {
+    id: "banking",
+    title: "Banking & Finance",
+    description: "Complex financial transactions and regulatory compliance support.",
+    associates: ["Loan Documentation Assistant", "Regulatory Compliance Monitor", "Credit Analysis Tool"]
+  },
+  {
+    id: "capital-markets",
+    title: "Capital Markets",
+    description: "Securities offerings and capital markets transactions.",
+    associates: ["Prospectus Assistant", "SEC Filing Specialist", "Market Analysis Tool"]
+  },
+  {
+    id: "securities-litigation",
+    title: "Securities Litigation",
+    description: "Specialized litigation support for securities-related disputes.",
+    associates: ["Securities Law Research Assistant", "Disclosure Analysis Tool", "Expert Witness Coordinator"]
+  },
+  {
+    id: "environmental",
+    title: "Environmental Law",
+    description: "Environmental compliance and sustainability legal support.",
+    associates: ["Regulation Tracker", "Environmental Impact Assessor", "Compliance Assistant"]
+  },
+  {
+    id: "antitrust",
+    title: "Antitrust & Competition",
+    description: "Competition law compliance and merger clearance support.",
+    associates: ["Market Analysis Assistant", "Merger Review Tool", "Competition Compliance Monitor"]
+  },
+  {
+    id: "bankruptcy",
+    title: "Bankruptcy & Restructuring",
+    description: "Financial restructuring and insolvency proceedings support.",
+    associates: ["Asset Valuation Assistant", "Restructuring Plan Analyzer", "Creditor Relations Tool"]
+  },
+  {
+    id: "healthcare",
+    title: "Healthcare & Life Sciences",
+    description: "Regulatory compliance and transactions in healthcare and life sciences.",
+    associates: ["FDA Compliance Assistant", "Clinical Trial Coordinator", "Healthcare Regulation Monitor"]
+  },
+  {
+    id: "privacy",
+    title: "Privacy & Data Protection",
+    description: "Data privacy compliance and cybersecurity legal support.",
+    associates: ["GDPR Compliance Assistant", "Data Breach Response Tool", "Privacy Policy Generator"]
+  },
+  {
+    id: "trusts",
+    title: "Trusts & Estates",
+    description: "Wealth preservation and estate planning for high-net-worth individuals.",
+    associates: ["Estate Planning Assistant", "Trust Administration Tool", "Tax Planning Specialist"]
+  },
+  {
+    id: "immigration",
+    title: "Immigration Law",
+    description: "Business immigration and global mobility solutions.",
+    associates: ["Visa Application Assistant", "Compliance Tracker", "Global Mobility Coordinator"]
+  },
+  {
+    id: "white-collar",
+    title: "White Collar & Regulatory Defense",
+    description: "Criminal defense and regulatory enforcement proceedings.",
+    associates: ["Investigation Assistant", "Regulatory Response Tool", "Compliance Audit Specialist"]
+  },
+  {
+    id: "public-law",
+    title: "Public Law & Government Relations",
+    description: "Government affairs and public policy legal support.",
+    associates: ["Policy Analysis Assistant", "Regulatory Tracker", "Government Relations Coordinator"]
   }
 ];
 
-const departments = ["All", "Legal", "Sales", "Ops"];
-
 export default function UseCases() {
-  const [selectedDepartment, setSelectedDepartment] = useState("All");
+  const [expandedAreas, setExpandedAreas] = useState<Set<string>>(new Set());
 
-  const filteredUseCases = selectedDepartment === "All" 
-    ? useCases 
-    : useCases.filter(useCase => useCase.departments.includes(selectedDepartment));
+  const toggleExpanded = (areaId: string) => {
+    const newExpanded = new Set(expandedAreas);
+    if (newExpanded.has(areaId)) {
+      newExpanded.delete(areaId);
+    } else {
+      newExpanded.add(areaId);
+    }
+    setExpandedAreas(newExpanded);
+  };
 
   return (
     <div className="min-h-screen bg-pure-white">
       <Header />
       
       {/* Hero Section */}
-      <section className="relative px-6 pt-14 lg:px-8">
-        <div className="mx-auto max-w-2xl py-32 sm:py-48">
-          <div className="text-center animate-fade-up">
-            <Badge className="mb-6 bg-slate-docket text-pure-white">Practice Areas</Badge>
-            <h1 className="text-4xl font-bold tracking-garamond text-midnight-brief sm:text-6xl">
-              AI Solutions for Every Practice Area
+      <section className="pt-24 pb-16 bg-gradient-to-br from-midnight-brief to-slate-docket">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h1 className="text-4xl font-bold tracking-garamond text-pure-white sm:text-6xl">
+              Practice Areas
             </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Discover how White Shoe transforms how legal work gets done across practices. 
-              No more run-away hourly bills. Measurable results that enable you to do your best work.
+            <p className="mt-6 text-lg leading-8 text-gray-200">
+              Comprehensive AI-powered legal support across all major practice areas. 
+              Every practice area includes White Shoe Co-Counsel and specialized associates.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Filter Section */}
-      <section className="py-12 bg-ice-fog">
+      {/* Practice Areas Grid */}
+      <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {departments.map((dept) => (
-              <Button
-                key={dept}
-                variant={selectedDepartment === dept ? "default" : "outline"}
-                onClick={() => setSelectedDepartment(dept)}
-                className={selectedDepartment === dept 
-                  ? "bg-slate-docket hover:bg-slate-docket/90 text-pure-white" 
-                  : "border-slate-docket text-slate-docket hover:bg-slate-docket hover:text-pure-white"
-                }
-              >
-                <Building2 className="h-4 w-4 mr-2" />
-                {dept}
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Grid */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {filteredUseCases.map((useCase) => (
-              <Card key={useCase.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
-                      <useCase.icon className="h-6 w-6 text-pure-white" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl">{useCase.title}</CardTitle>
-                      <div className="flex gap-2 mt-2">
-                        {useCase.departments.map((dept) => (
-                          <Badge key={dept} variant="secondary" className="text-xs">
-                            {dept}
-                          </Badge>
-                        ))}
+          <div className="grid gap-6 lg:gap-8">
+            {practiceAreas.map((area) => {
+              const isExpanded = expandedAreas.has(area.id);
+              return (
+                <Card 
+                  key={area.id} 
+                  className="group hover:shadow-lg transition-all duration-300 border-ice-fog hover:border-slate-docket/30"
+                >
+                  <CardHeader 
+                    className="cursor-pointer"
+                    onClick={() => toggleExpanded(area.id)}
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-3">
+                        <div className="p-2 bg-slate-docket/10 rounded-lg group-hover:bg-slate-docket/20 transition-colors">
+                          <Briefcase className="h-5 w-5 text-slate-docket" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-xl font-garamond text-midnight-brief">
+                            {area.title}
+                          </CardTitle>
+                          <CardDescription className="mt-1">
+                            {area.description}
+                          </CardDescription>
+                        </div>
                       </div>
+                      <Button variant="ghost" size="sm" className="text-slate-docket">
+                        {isExpanded ? (
+                          <ChevronDown className="h-5 w-5" />
+                        ) : (
+                          <ChevronRight className="h-5 w-5" />
+                        )}
+                      </Button>
                     </div>
-                  </div>
-                  <CardDescription className="text-base">
-                    {useCase.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  {/* Pain → Play → Payoff */}
-                  <div className="space-y-4 mb-6">
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-red-700">Pain</p>
-                        <p className="text-sm text-gray-600">{useCase.pain}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-blue-700">Play</p>
-                        <p className="text-sm text-gray-600">{useCase.play}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-green-700">Payoff</p>
-                        <p className="text-sm text-gray-600">{useCase.payoff}</p>
-                      </div>
-                    </div>
-                  </div>
+                  </CardHeader>
+                  
+                  {isExpanded && (
+                    <CardContent className="border-t border-ice-fog">
+                      <div className="pt-6 space-y-6">
+                        {/* White Shoe Co-Counsel */}
+                        <div className="bg-gradient-to-r from-slate-docket/5 to-midnight-brief/5 p-6 rounded-lg">
+                          <div className="flex items-center space-x-3 mb-3">
+                            <div className="p-2 bg-slate-docket rounded-lg">
+                              <Bot className="h-5 w-5 text-pure-white" />
+                            </div>
+                            <h3 className="text-lg font-semibold text-midnight-brief">
+                              White Shoe Co-Counsel
+                            </h3>
+                          </div>
+                          <p className="text-gray-600">
+                            Advanced AI legal assistant specialized in {area.title.toLowerCase()}, 
+                            providing expert guidance, document analysis, and strategic insights 
+                            tailored to this practice area.
+                          </p>
+                        </div>
 
-                  {/* Features */}
-                  <div className="border-t pt-4">
-                    <p className="font-semibold text-sm mb-3">Key Features</p>
-                    <ul className="space-y-2">
-                      {useCase.features.map((feature, index) => (
-                        <li key={index} className="flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-green-600 flex-shrink-0" />
-                          <span className="text-xs text-gray-600">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                        {/* Associates */}
+                        <div>
+                          <div className="flex items-center space-x-2 mb-4">
+                            <Users className="h-5 w-5 text-slate-docket" />
+                            <h3 className="text-lg font-semibold text-midnight-brief">
+                              Specialized Associates
+                            </h3>
+                          </div>
+                          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+                            {area.associates.map((associate, index) => (
+                              <div 
+                                key={index}
+                                className="p-4 bg-pure-white border border-ice-fog rounded-lg hover:border-slate-docket/30 transition-colors"
+                              >
+                                <div className="text-sm font-medium text-midnight-brief">
+                                  {associate}
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
 
-      {/* ROI Section */}
-      <section className="py-24 sm:py-32 bg-ice-fog">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Quantified Results
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Real metrics from teams using White Shoe AI across these use cases
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Clock className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">75%</p>
-                <p className="text-sm text-gray-600">Faster contract review</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Shield className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">90%</p>
-                <p className="text-sm text-gray-600">Reduction in missed risks</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <TrendingUp className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">15×</p>
-                <p className="text-sm text-gray-600">Return on investment</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Users className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">60%</p>
-                <p className="text-sm text-gray-600">Less audit prep time</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              See These Use Cases in Action
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Book a personalized demo to see how White Shoe AI solves your specific legal challenges.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Link to="/contact">
-                <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 text-lg btn-ripple">
-                  Request Custom Demo
-                </Button>
-              </Link>
-              <Link to="/platform" className="text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
-                Explore platform <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+                        <div className="flex justify-end pt-4">
+                          <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
+                            Explore {area.title}
+                          </Button>
+                        </div>
+                      </div>
+                    </CardContent>
+                  )}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
