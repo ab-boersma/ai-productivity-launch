@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -16,7 +15,10 @@ import {
   Globe,
   CheckCircle,
   Download,
-  AlertTriangle
+  AlertTriangle,
+  Database,
+  TestTube,
+  UserCheck
 } from "lucide-react";
 
 const securityFeatures = [
@@ -49,6 +51,39 @@ const securityFeatures = [
     icon: Server,
     title: "On-Premise Deployment",
     description: "Enterprise option for complete data control"
+  }
+];
+
+const protectionMeasures = [
+  {
+    icon: Lock,
+    title: "End-to-End Encryption",
+    description: "All data is encrypted in transit and at rest using industry-standard AES-256 encryption."
+  },
+  {
+    icon: Server,
+    title: "Secure Infrastructure",
+    description: "Our platform is built on trusted cloud infrastructure providers that maintain SOC 2 compliance and other certifications."
+  },
+  {
+    icon: UserCheck,
+    title: "Role-Based Access",
+    description: "Granular access controls ensure users can only access the data they need."
+  },
+  {
+    icon: TestTube,
+    title: "Security Testing",
+    description: "We regularly test our systems to identify and address potential vulnerabilities."
+  },
+  {
+    icon: Database,
+    title: "Data Isolation",
+    description: "Client data is logically isolated to prevent unauthorized access between organizations."
+  },
+  {
+    icon: Shield,
+    title: "Privacy By Design",
+    description: "Security and privacy considerations are built into our development process from the start."
   }
 ];
 
@@ -123,45 +158,35 @@ export default function Security() {
         </div>
       </section>
 
-      {/* Security Promise */}
+      {/* How We Protect Your Data */}
       <section className="py-24 sm:py-32 bg-ice-fog">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Our Security Promise
+              How We Protect Your Data
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Your data is never used to train our models. It's encrypted, isolated, and under your complete control.
+              Security is fundamental to our platform. We've implemented comprehensive measures to protect your data at every level.
             </p>
           </div>
           
-          <Card className="bg-gradient-to-r from-slate-docket to-midnight-brief text-pure-white">
-            <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div>
-                  <Shield className="h-12 w-12 mx-auto mb-4 opacity-90" />
-                  <h3 className="text-xl font-bold mb-2">Zero Knowledge</h3>
-                  <p className="text-sm opacity-90">
-                    We cannot access your data even with administrative privileges
-                  </p>
-                </div>
-                <div>
-                  <Lock className="h-12 w-12 mx-auto mb-4 opacity-90" />
-                  <h3 className="text-xl font-bold mb-2">Always Encrypted</h3>
-                  <p className="text-sm opacity-90">
-                    End-to-end encryption for data in transit and at rest
-                  </p>
-                </div>
-                <div>
-                  <FileCheck className="h-12 w-12 mx-auto mb-4 opacity-90" />
-                  <h3 className="text-xl font-bold mb-2">Audited & Certified</h3>
-                  <p className="text-sm opacity-90">
-                    Regular third-party security audits and compliance certifications
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {protectionMeasures.map((measure) => (
+              <Card key={measure.title} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
+                      <measure.icon className="h-6 w-6 text-pure-white" />
+                    </div>
+                    <CardTitle className="text-lg">{measure.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{measure.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
