@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -33,28 +32,14 @@ const values = [
 
 const team = [
   {
-    name: "Sarah Chen",
-    role: "CEO & Co-Founder",
-    background: "Former BigLaw partner turned legal tech entrepreneur. Stanford Law, 15 years in M&A.",
-    expertise: "Legal Operations, AI Strategy"
+    name: "Aaron Boersma",
+    role: "Co-Founder",
+    background: "With over 10 years experience in buying and selling legal services. From local legal work in Mississippi to large-scale global transactions, Aaron has bought and sold legal services at every corner of the legal market."
   },
   {
-    name: "Michael Rodriguez", 
-    role: "CTO & Co-Founder",
-    background: "Ex-Google AI researcher with deep expertise in natural language processing and legal applications.",
-    expertise: "AI/ML, Platform Engineering"
-  },
-  {
-    name: "Jennifer Walsh",
-    role: "Chief Legal Officer",
-    background: "Former General Counsel at high-growth startups. Harvard Law, expert in compliance and privacy.",
-    expertise: "Privacy, Compliance, Legal Ethics"
-  },
-  {
-    name: "David Kim",
-    role: "VP of Product",
-    background: "Product leader from legal tech unicorn. Specializes in AI-powered workflow automation.",
-    expertise: "Product Strategy, UX Design"
+    name: "Alex Rindels", 
+    role: "Co-Founder and Technical Advisor",
+    background: "Leading general counsel at one of the first unicorn AI startups. Alex knows what it means for legal to enable a business to scale globally."
   }
 ];
 
@@ -119,7 +104,7 @@ export default function About() {
               Meet the Team
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Legal experts and AI researchers united by a shared vision of accessible legal technology.
+              Experienced founders united by a shared vision of accessible legal technology.
             </p>
           </div>
           
@@ -142,16 +127,9 @@ export default function About() {
                       </p>
                     </div>
                   </div>
-                  <p className="text-gray-600 text-sm mb-3">
+                  <p className="text-gray-600 text-sm">
                     {member.background}
                   </p>
-                  <div className="flex flex-wrap gap-1">
-                    {member.expertise.split(', ').map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
                 </CardContent>
               </Card>
             ))}
