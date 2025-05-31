@@ -21,39 +21,6 @@ import {
   UserCheck
 } from "lucide-react";
 
-const securityFeatures = [
-  {
-    icon: Lock,
-    title: "End-to-End Encryption",
-    description: "All data encrypted in transit and at rest using AES-256 encryption"
-  },
-  {
-    icon: Eye,
-    title: "Zero-Knowledge Architecture", 
-    description: "We cannot access your data even if we wanted to"
-  },
-  {
-    icon: FileCheck,
-    title: "SOC 2 Type II Certified",
-    description: "Independently audited security controls and processes"
-  },
-  {
-    icon: Users,
-    title: "Role-Based Access Control",
-    description: "Granular permissions and audit trails for all user actions"
-  },
-  {
-    icon: Globe,
-    title: "Data Residency Options",
-    description: "Choose where your data is stored and processed"
-  },
-  {
-    icon: Server,
-    title: "On-Premise Deployment",
-    description: "Enterprise option for complete data control"
-  }
-];
-
 const protectionMeasures = [
   {
     icon: Lock,
@@ -190,31 +157,56 @@ export default function Security() {
         </div>
       </section>
 
-      {/* Security Features */}
+      {/* Our Security Philosophy */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Comprehensive Security Features
+              Our Security Philosophy
             </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              White Shoe is designed to help legal teams work confidently with their sensitive data. We follow security best practices and focus on these key areas:
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {securityFeatures.map((feature) => (
-              <Card key={feature.title} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
-                      <feature.icon className="h-6 w-6 text-pure-white" />
-                    </div>
-                    <CardTitle className="text-lg">{feature.title}</CardTitle>
+          <div className="mx-auto max-w-4xl">
+            <Card className="mb-12">
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 gap-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Privacy-first design and development</p>
                   </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Secure cloud infrastructure from trusted providers</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Continuous monitoring and proactive security measures</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Transparent data handling and privacy policies</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
+                    <p className="text-lg text-gray-700">Regular security reviews</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-gray-50">
+              <CardHeader>
+                <CardTitle className="text-xl">Understanding Our Approach</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700 leading-relaxed">
+                  We're committed to continuously improving our security practices as we grow. We work with infrastructure providers who maintain rigorous compliance certifications while we focus on building secure application-level protections for your data.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
