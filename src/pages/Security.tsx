@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -180,8 +179,7 @@ export default function Security() {
                     <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Privacy-first design and development</h3>
-                    <p className="text-gray-600">Every feature is built with privacy considerations from the ground up.</p>
+                    <h3 className="text-lg font-semibold text-midnight-brief">Privacy-first design and development</h3>
                   </div>
                 </div>
                 
@@ -190,8 +188,7 @@ export default function Security() {
                     <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Secure cloud infrastructure from trusted providers</h3>
-                    <p className="text-gray-600">We partner with leading cloud providers who maintain the highest security standards.</p>
+                    <h3 className="text-lg font-semibold text-midnight-brief">Secure cloud infrastructure from trusted providers</h3>
                   </div>
                 </div>
                 
@@ -200,8 +197,7 @@ export default function Security() {
                     <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Continuous monitoring and proactive security measures</h3>
-                    <p className="text-gray-600">24/7 monitoring and automated threat detection keep your data protected.</p>
+                    <h3 className="text-lg font-semibold text-midnight-brief">Continuous monitoring and proactive security measures</h3>
                   </div>
                 </div>
                 
@@ -210,8 +206,7 @@ export default function Security() {
                     <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Transparent data handling and privacy policies</h3>
-                    <p className="text-gray-600">Clear, straightforward policies that explain exactly how we handle your data.</p>
+                    <h3 className="text-lg font-semibold text-midnight-brief">Transparent data handling and privacy policies</h3>
                   </div>
                 </div>
                 
@@ -220,8 +215,7 @@ export default function Security() {
                     <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Regular security reviews</h3>
-                    <p className="text-gray-600">Ongoing assessments and improvements to maintain the highest security standards.</p>
+                    <h3 className="text-lg font-semibold text-midnight-brief">Regular security reviews</h3>
                   </div>
                 </div>
               </div>
