@@ -28,15 +28,15 @@ export default function Index() {
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="text-center animate-fade-up">
             <h1 className="text-4xl font-bold tracking-garamond text-midnight-brief sm:text-6xl">
-              Your AI Associate—ready in minutes, priced for every legal team.
+              Your AI Legal Support – ready in minutes, priced for every legal team
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Stop the AI arms race. Equip your team today.
+              Safe AI legal tools within reach for every lawyer. Get equipped today.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link to="/contact">
                 <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 text-lg btn-ripple">
-                  Get a Demo
+                  Sign Up
                 </Button>
               </Link>
               <Link to="/platform" className="text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
