@@ -1,4 +1,5 @@
 
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -150,12 +151,12 @@ export default function Index() {
                   description: "Lives inside Slack, Outlook, Word, and more—no workflow disruption." 
                 },
                 { 
-                  title: "Collaboration-First Design", 
-                  description: "Turn questions into briefs, co-edit with colleagues, and advise clients—all within White Shoe." 
-                },
-                { 
                   title: "Secure & Compliant", 
                   description: "Every word is encrypted, ring-fenced, and never used to train our models. Confidentiality isn't a feature; it's the foundation." 
+                },
+                { 
+                  title: "Collaboration-First Design", 
+                  description: "Turn questions into briefs, co-edit with colleagues, and advise clients—all within White Shoe." 
                 }
               ].map((item, index) => (
                 <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow bg-pure-white">
@@ -270,3 +271,4 @@ export default function Index() {
     </div>
   );
 }
+
