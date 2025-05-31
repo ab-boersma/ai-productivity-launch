@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -90,28 +91,76 @@ const plans = [
 
 const faqs = [
   {
-    question: "What's included in unlimited drafts?",
-    answer: "All plans include unlimited document analysis, contract reviews, legal research queries, and AI-generated content. There are no hidden usage limits or per-document fees."
+    question: "How do \"Billable Hours\" work on White Shoe AI, and what happens if I exceed my monthly allotment?",
+    answer: "A White Shoe Billable Hour isn't a stopwatch—it's output. One hour represents roughly 125 pages of finished work product (drafts, analyses, briefs). When you hit your cap: Clerk & Junior Associate: buy add-on hour packs or wait for next month's refresh. Senior Associate: set an auto-top-up limit or add packs on demand. Partner: deep-research tools consume hours faster; your Customer Success Manager will warn you and can expand capacity the same day. Unused hours expire at month-end, but you can upgrade any time and we'll prorate the difference."
   },
   {
-    question: "How does the seat-based pricing work?",
-    answer: "A seat is for one user who can access all AI Associates. You can add or remove seats monthly. Each seat includes full platform access and unlimited usage."
+    question: "What's the difference between Clerk, Junior Associate, Senior Associate, and Partner plans?",
+    answer: "Clerk – $24/mo: 15 hours, one company profile, essential tools like Issue Spotter and Co-Counsel. Junior Associate – $49/mo: 60 hours, one profile, adds Corporate Secretary and Compliance Navigator. Senior Associate – $99/mo: 130 hours, three profiles, unlocks a dozen advanced associates for discovery, equity plans, insurance, and more. Partner – $249/mo: 300 hours (scalable), unlimited profiles, full library of associates, bespoke associates on request, and priority support. Each tier inherits everything in the tiers below it."
   },
   {
-    question: "Is there a free trial?",
-    answer: "Yes! We offer a 14-day free trial with full access to all features. No credit card required to start."
+    question: "Which plan is best for a solo lawyer, small firm, or in-house team?",
+    answer: "Solo or boutique practice: start with Clerk; upgrade to Junior Associate as your workload grows. Small firms or lean corporate teams (5–15 lawyers): Junior Associate if your matters are routine, Senior Associate if you cover multiple practice areas. Busy GCs, venture-backed scale-ups, or high-stakes litigators: Senior Associate or Partner for higher hour pools and advanced associates."
   },
   {
-    question: "What integrations are available?",
-    answer: "We integrate with Slack, Microsoft Teams, popular CLM systems, document repositories, and offer REST API access. Custom integrations available for Corporate plans."
+    question: "Can I upgrade or downgrade my plan at any time, and how is proration handled?",
+    answer: "Yes. Upgrades take effect instantly with a prorated charge for the rest of the billing period. Downgrades kick in on your next renewal date so you get full value from the hours you've already purchased."
   },
   {
-    question: "How secure is my data?",
-    answer: "We maintain SOC 2 Type II compliance, use end-to-end encryption, and never train AI models on your data. Corporate plans include additional security features and on-premise options."
+    question: "Is there a discount for annual billing?",
+    answer: "Absolutely. Pay annually and you'll get the equivalent of two months free—about a 17% savings."
   },
   {
-    question: "Can I upgrade or downgrade anytime?",
-    answer: "Yes, you can change plans at any time. Upgrades take effect immediately, and downgrades take effect at your next billing cycle."
+    question: "What exactly is a \"Company Profile,\" and why might I need more than one?",
+    answer: "A Company Profile stores a distinct set of documents, policies, templates, and brand voice. You'll want additional profiles if you handle multiple clients, have several subsidiaries, or need a sandboxed environment for deals like M&A due diligence."
+  },
+  {
+    question: "Do unused Billable Hours roll over?",
+    answer: "No. Hours reset each month to keep pricing predictable and razor-thin. If you anticipate a heavy month, you can top up or temporarily upgrade."
+  },
+  {
+    question: "What happens to my data if I cancel my subscription?",
+    answer: "Your workspace switches to read-only for 30 days so you can export anything you need. After that, all data is permanently deleted from our production backups under our Data Retention & Deletion Policy."
+  },
+  {
+    question: "Is there a free trial or demo?",
+    answer: "Yes. Book a live demo with our team to see real documents in action, or request a seven-day sandbox with five Billable Hours—no credit card required."
+  },
+  {
+    question: "Are setup fees, onboarding costs, or long-term contracts required?",
+    answer: "None. Subscriptions are month-to-month (or annual if you prefer) with zero implementation fees. Guided videos and live office hours are included free."
+  },
+  {
+    question: "Does the Partner plan include every feature from the lower tiers?",
+    answer: "Yes. Partner users get the entire associate library, unlimited profiles, custom associates on request, and priority support."
+  },
+  {
+    question: "How do custom Associates or add-on practice areas work for Partner users?",
+    answer: "Tell us the workflow—say, \"FinTech licensing\" or \"Biotech IP landscape.\" We'll configure a domain-trained associate within about a week at no extra cost for Partner subscribers."
+  },
+  {
+    question: "What integrations are available, and are they included in all plans?",
+    answer: "Native connectors include Slack, Microsoft Teams, Outlook, Gmail, Google Drive, OneDrive, Box, and a Zapier beta. Integrations are bundled starting with Junior Associate; Clerk users can add them à la carte."
+  },
+  {
+    question: "How is my confidential information protected?",
+    answer: "No prompts or outputs are ever used to train external models. SOC 2 Type II, GDPR, and CCPA compliant infrastructure. AES-256 encryption at rest and TLS 1.3 in transit. Your data stays yours—trust is non-negotiable."
+  },
+  {
+    question: "Do you offer volume, nonprofit, or educational discounts?",
+    answer: "We do. Contact sales for tailored pricing, and ask about pro-bono credits for legal-aid clinics."
+  },
+  {
+    question: "How fast is customer support, and what channels are included with each tier?",
+    answer: "Clerk: email only, responses within 24 hours. Junior Associate: email plus live chat, responses within 12 hours. Senior Associate: email, chat, and callback phone support, responses within 8 hours. Partner: dedicated Customer Success Manager, priority email and chat, two-hour response SLA plus uptime credits."
+  },
+  {
+    question: "Can multiple users share a single subscription, and how are additional seats billed?",
+    answer: "Each subscription includes one named seat. You can add teammates anytime: $9 (Clerk), $19 (Junior), $29 (Senior), or $49 (Partner) per user per month. All seats share the same pool of Billable Hours."
+  },
+  {
+    question: "If my legal needs are very niche, can I request a bespoke Associate or feature?",
+    answer: "Yes. Partner subscribers get bespoke associates free of charge. Junior Associate and Senior Associate users can purchase one-off builds. We love edge cases—they sharpen the platform for everyone."
   }
 ];
 
