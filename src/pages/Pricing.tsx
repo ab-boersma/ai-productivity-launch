@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { Link } from "react-router-dom";
-import { CheckCircle, Star, Building2, Users, Zap, TrendingUp } from "lucide-react";
+import { CheckCircle, Star, Building2, Users, Zap, TrendingUp, Construction } from "lucide-react";
 import { useState } from "react";
 
 const plans = [
@@ -166,70 +165,30 @@ export default function Pricing() {
         </div>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Under Construction Section */}
       <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="isolate mx-auto grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-4 lg:gap-x-8 xl:gap-x-12">
-            {plans.map((plan) => (
-              <Card key={plan.name} className={`relative hover:shadow-lg transition-shadow ${plan.popular ? 'ring-2 ring-slate-docket' : ''}`}>
-                {plan.popular && (
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-slate-docket text-pure-white">
-                      <Star className="h-3 w-3 mr-1" />
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-                <CardHeader className="pb-6">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
-                      <plan.icon className="h-6 w-6 text-pure-white" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl">{plan.name}</CardTitle>
-                      <p className="text-sm text-gray-600">{plan.seats}</p>
-                    </div>
-                  </div>
-                  <div className="mt-6">
-                    <span className="text-4xl font-bold tracking-tight text-midnight-brief">
-                      {billingPeriod === "monthly" ? plan.monthlyPrice : plan.yearlyPrice}
-                    </span>
-                    <span className="text-sm font-semibold leading-6 text-gray-600">
-                      /month
-                    </span>
-                    {billingPeriod === "yearly" && (
-                      <div className="text-sm text-gray-500 mt-1">
-                        Billed annually
-                      </div>
-                    )}
-                  </div>
-                  <CardDescription className="mt-4 text-base">
-                    {plan.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-8">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/contact">
-                    <Button 
-                      className={`w-full ${plan.popular 
-                        ? 'bg-slate-docket hover:bg-slate-docket/90 text-pure-white' 
-                        : 'bg-midnight-brief hover:bg-midnight-brief/90 text-pure-white'
-                      } btn-ripple`}
-                    >
-                      Sign Up
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <Card className="max-w-2xl mx-auto text-center">
+            <CardContent className="p-12">
+              <div className="flex justify-center mb-6">
+                <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-slate-docket">
+                  <Construction className="h-8 w-8 text-pure-white" />
+                </div>
+              </div>
+              <h2 className="text-2xl font-bold tracking-garamond text-midnight-brief mb-4">
+                Pricing Plans Under Construction
+              </h2>
+              <p className="text-gray-600 mb-8 text-lg">
+                We're working hard to bring you the perfect pricing structure. 
+                Our plans will be available soon with options for every legal team size.
+              </p>
+              <Link to="/contact">
+                <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 btn-ripple">
+                  Get Notified When Available
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
