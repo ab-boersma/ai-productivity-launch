@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -37,170 +36,252 @@ import {
   UserCheck,
   Award,
   Lightbulb,
-  BarChart
+  BarChart,
+  FileSearch,
+  Handshake
 } from "lucide-react";
 
-// Associate data for the carousel
+// All Associates data organized by practice area
 const allAssociates = [
+  // Corporate & Securities
   {
     id: 1,
-    name: "Issue Spotter Associate",
-    specialty: "Document Review Specialist",
-    icon: Search,
-    description: "Automated document review that catches what humans miss. Risk analysis and compliance gaps.",
-    category: "Review"
+    name: "Corporate Secretary",
+    specialty: "Corporate Governance Specialist",
+    icon: Building,
+    description: "Streamline corporate governance with AI-powered documentation tools. Draft professional board minutes from transcripts, generate formal board resolutions, and create unanimous written consents.",
+    category: "Corporate & Securities",
+    categoryColor: "bg-blue-100 text-blue-800"
   },
   {
     id: 2,
-    name: "Workflow Associate",
-    specialty: "Process Automation Expert", 
-    icon: Workflow,
-    description: "Streamline repetitive tasks and integrate with existing tools. Document generation and approvals.",
-    category: "Automation"
+    name: "Funding Navigator",
+    specialty: "Corporate Funding Expert",
+    icon: TrendingUp,
+    description: "AI-powered analysis and workflow management for corporate funding transactions. Analyze term sheets, SAFE notes, and debt agreements with valuation assessment and compliance verification.",
+    category: "Corporate & Securities",
+    categoryColor: "bg-blue-100 text-blue-800"
   },
   {
     id: 3,
-    name: "Contract Associate",
-    specialty: "Contract Analysis Expert",
-    icon: FileText,
-    description: "Deep contract analysis, clause optimization, and risk assessment for all agreement types.",
-    category: "Corporate"
+    name: "M&A Companion",
+    specialty: "M&A Legal Assistant",
+    icon: Handshake,
+    description: "Your AI-powered M&A legal assistant for due diligence, issue tracking, and document analysis. Streamline mergers and acquisitions with comprehensive AI-driven due diligence support.",
+    category: "Corporate & Securities",
+    categoryColor: "bg-blue-100 text-blue-800"
   },
   {
     id: 4,
-    name: "Litigation Associate", 
-    specialty: "Case Strategy Specialist",
-    icon: Gavel,
-    description: "Case law research, motion drafting, and discovery management for complex litigation.",
-    category: "Litigation"
+    name: "Investor Relations Manager",
+    specialty: "Investor Communications Expert",
+    icon: Users,
+    description: "Create, review, and manage investor-facing narratives with SEC compliance and disclosure risk assessment. Craft compelling, compliant investor communications.",
+    category: "Corporate & Securities",
+    categoryColor: "bg-blue-100 text-blue-800"
   },
   {
     id: 5,
-    name: "IP Associate",
-    specialty: "Intellectual Property Expert",
-    icon: Lightbulb,
-    description: "Patent research, trademark analysis, and IP portfolio management across jurisdictions.",
-    category: "IP"
+    name: "Equity Plan Reviewer",
+    specialty: "Equity Compensation Specialist",
+    icon: Award,
+    description: "Comprehensive equity compensation plan analysis and compliance verification. Ensure your equity plans meet all regulatory requirements with AI-powered analysis.",
+    category: "Corporate & Securities",
+    categoryColor: "bg-blue-100 text-blue-800"
   },
   {
     id: 6,
-    name: "Corporate Associate",
-    specialty: "Corporate Transactions Expert",
-    icon: Building,
-    description: "M&A due diligence, corporate governance, and securities compliance analysis.",
-    category: "Corporate"
+    name: "ESG Disclosure Companion",
+    specialty: "ESG Compliance Expert",
+    icon: Globe,
+    description: "Draft and validate ESG/DEI disclosures with smart templates, risk assessment, and regulatory compliance. Navigate the complex ESG disclosure landscape.",
+    category: "Corporate & Securities",
+    categoryColor: "bg-blue-100 text-blue-800"
   },
+  
+  // Compliance & Risk Management
   {
     id: 7,
-    name: "Regulatory Associate",
-    specialty: "Compliance Specialist",
-    icon: Shield,
-    description: "Regulatory analysis, compliance monitoring, and policy interpretation across industries.",
-    category: "Regulatory"
+    name: "Issue Spotter",
+    specialty: "Risk Detection Specialist",
+    icon: Search,
+    description: "Identifies key legal risks in internal communications. Protect your organization by analyzing emails, Slack messages, and documents for potential legal exposure.",
+    category: "Compliance & Risk",
+    categoryColor: "bg-red-100 text-red-800"
   },
   {
     id: 8,
-    name: "Tax Associate",
-    specialty: "Tax Law Expert",
-    icon: Calculator,
-    description: "Tax planning, regulatory compliance, and structuring advice for complex transactions.",
-    category: "Tax"
+    name: "Compliance Navigator",
+    specialty: "Regulatory Compliance Expert",
+    icon: Shield,
+    description: "Identifies regulatory risks in company policies with multi-jurisdiction analysis. Ensure your policies meet all regulatory requirements with AI scanning for compliance gaps.",
+    category: "Compliance & Risk",
+    categoryColor: "bg-red-100 text-red-800"
   },
   {
     id: 9,
-    name: "Employment Associate",
-    specialty: "Labor & Employment Expert",
-    icon: Users,
-    description: "Employment law compliance, workplace policy review, and discrimination analysis.",
-    category: "Employment"
+    name: "Sales & Marketing Approver",
+    specialty: "Marketing Compliance Specialist",
+    icon: Target,
+    description: "AI-driven compliance checkpoint for outbound marketing and sales content. Prevent regulatory violations with automated review of marketing materials and sales presentations.",
+    category: "Compliance & Risk",
+    categoryColor: "bg-red-100 text-red-800"
   },
   {
     id: 10,
-    name: "Real Estate Associate",
-    specialty: "Property Law Expert",
-    icon: Landmark,
-    description: "Property transactions, zoning analysis, and real estate development compliance.",
-    category: "Real Estate"
+    name: "Corporate Policies Drafter",
+    specialty: "Policy Development Expert",
+    icon: FileText,
+    description: "Generate compliant corporate policies with jurisdiction-aware templates and AI customization. Create comprehensive corporate policies tailored to your jurisdiction and industry.",
+    category: "Compliance & Risk",
+    categoryColor: "bg-red-100 text-red-800"
   },
+  
+  // Litigation & Disputes
   {
     id: 11,
-    name: "Environmental Associate",
-    specialty: "Environmental Law Expert",
-    icon: Globe,
-    description: "Environmental compliance, permitting analysis, and sustainability policy review.",
-    category: "Environmental"
+    name: "Litigation Risk Modeler",
+    specialty: "Litigation Analytics Expert",
+    icon: BarChart,
+    description: "Predicts lawsuit risks with data-driven analysis and outcome forecasting. Quantify litigation exposure with AI that analyzes historical case outcomes and predicts settlement values.",
+    category: "Litigation & Disputes",
+    categoryColor: "bg-purple-100 text-purple-800"
   },
   {
     id: 12,
-    name: "Securities Associate",
-    specialty: "Securities Law Expert",
-    icon: TrendingUp,
-    description: "Securities compliance, disclosure analysis, and public company governance.",
-    category: "Securities"
+    name: "Court Filing Tracker",
+    specialty: "Litigation Monitoring Specialist",
+    icon: Gavel,
+    description: "Monitors litigation filings with automated docket tracking and case analysis. Stay ahead of litigation trends with automated monitoring of court filings relevant to your industry.",
+    category: "Litigation & Disputes",
+    categoryColor: "bg-purple-100 text-purple-800"
   },
   {
     id: 13,
-    name: "Privacy Associate",
-    specialty: "Data Privacy Expert",
-    icon: Lock,
-    description: "GDPR/CCPA compliance, privacy policy analysis, and data governance frameworks.",
-    category: "Privacy"
+    name: "eDiscovery Optimizer",
+    specialty: "Document Review Expert",
+    icon: FileSearch,
+    description: "Prioritizes key documents in eDiscovery with AI-powered relevance scoring. Streamline document review with AI that automatically scores document relevance and detects privilege issues.",
+    category: "Litigation & Disputes",
+    categoryColor: "bg-purple-100 text-purple-800"
   },
   {
     id: 14,
-    name: "Immigration Associate",
-    specialty: "Immigration Law Expert",
-    icon: UserCheck,
-    description: "Visa applications, immigration compliance, and workforce mobility planning.",
-    category: "Immigration"
+    name: "Deep Researcher",
+    specialty: "Legal Research Expert",
+    icon: Book,
+    description: "Premium legal research with exhaustive search capabilities and comprehensive analysis. Conduct thorough legal research with AI that searches across multiple databases.",
+    category: "Litigation & Disputes",
+    categoryColor: "bg-purple-100 text-purple-800"
   },
+  
+  // Intellectual Property
   {
     id: 15,
-    name: "Antitrust Associate",
-    specialty: "Competition Law Expert",
-    icon: Scale,
-    description: "Merger clearance, competition analysis, and antitrust compliance review.",
-    category: "Antitrust"
+    name: "Trademark Tracker",
+    specialty: "Brand Protection Specialist",
+    icon: Eye,
+    description: "Monitors competitor filings and IP risks with global database integration. Protect your brand with automated monitoring of trademark filings worldwide.",
+    category: "Intellectual Property",
+    categoryColor: "bg-green-100 text-green-800"
   },
   {
     id: 16,
-    name: "Banking Associate",
-    specialty: "Financial Services Expert",
-    icon: Briefcase,
-    description: "Banking regulations, financial compliance, and lending documentation review.",
-    category: "Banking"
+    name: "Patent Prior Art Researcher",
+    specialty: "Patent Analysis Expert",
+    icon: Lightbulb,
+    description: "Conducts comprehensive prior art searches with semantic analysis and visualization. Assess patent viability with AI-powered searches across global patent databases.",
+    category: "Intellectual Property",
+    categoryColor: "bg-green-100 text-green-800"
   },
+  
+  // Employment & Immigration
   {
     id: 17,
-    name: "Insurance Associate",
-    specialty: "Insurance Law Expert",
-    icon: Award,
-    description: "Policy analysis, claims review, and insurance regulatory compliance.",
-    category: "Insurance"
+    name: "Immigration Consultant",
+    specialty: "Immigration Law Expert",
+    icon: UserCheck,
+    description: "Comprehensive immigration case management, compliance monitoring, and strategic guidance. Manage corporate immigration programs with AI-powered case tracking and deadline monitoring.",
+    category: "Employment & Immigration",
+    categoryColor: "bg-orange-100 text-orange-800"
   },
   {
     id: 18,
-    name: "Healthcare Associate",
-    specialty: "Healthcare Law Expert",
-    icon: Brain,
-    description: "HIPAA compliance, healthcare regulations, and medical device approval processes.",
-    category: "Healthcare"
+    name: "Employee Exit Risk Analyzer",
+    specialty: "Employment Risk Specialist",
+    icon: Users,
+    description: "Reviews exit interviews and departure processes for legal exposure identification. Minimize employment litigation risks by analyzing exit interviews and departure patterns.",
+    category: "Employment & Immigration",
+    categoryColor: "bg-orange-100 text-orange-800"
   },
   {
     id: 19,
-    name: "Ethics Associate",
-    specialty: "Legal Ethics Expert",
-    icon: Target,
-    description: "Professional responsibility, conflict analysis, and ethics opinion guidance.",
-    category: "Ethics"
+    name: "Employee Handbook Validator",
+    specialty: "HR Policy Expert",
+    icon: Book,
+    description: "Audits employee handbooks for compliance across multiple jurisdictions. Ensure your employee handbook meets all regulatory requirements with AI-powered compliance verification.",
+    category: "Employment & Immigration",
+    categoryColor: "bg-orange-100 text-orange-800"
   },
+  
+  // Real Estate & Insurance
   {
     id: 20,
-    name: "Analytics Associate",
-    specialty: "Legal Analytics Expert",
-    icon: BarChart,
-    description: "Data-driven insights, performance metrics, and predictive legal analytics.",
-    category: "Analytics"
+    name: "Realty Advisor",
+    specialty: "Real Estate Expert",
+    icon: Landmark,
+    description: "Comprehensive real estate portfolio analysis and risk assessment. Optimize your real estate portfolio with AI-powered analysis of lease agreements and property risks.",
+    category: "Real Estate & Insurance",
+    categoryColor: "bg-indigo-100 text-indigo-800"
+  },
+  {
+    id: 21,
+    name: "Insurance Policy Analyzer",
+    specialty: "Insurance Coverage Expert",
+    icon: Shield,
+    description: "Analyze corporate insurance policies for comprehensive coverage and risk assessment. Ensure adequate insurance protection with AI that analyzes policy coverage and identifies gaps.",
+    category: "Real Estate & Insurance",
+    categoryColor: "bg-indigo-100 text-indigo-800"
+  },
+  
+  // Legal Operations & Intelligence
+  {
+    id: 22,
+    name: "Chief Operating Officer",
+    specialty: "Legal Operations Expert",
+    icon: Briefcase,
+    description: "Legal ops command center for building internal operations structures, SOPs, vendor matrices, and KPI dashboards. Transform your legal operations with comprehensive AI-powered management tools.",
+    category: "Legal Operations",
+    categoryColor: "bg-gray-100 text-gray-800"
+  },
+  {
+    id: 23,
+    name: "Invoice Checker",
+    specialty: "Legal Spend Analyst",
+    icon: Calculator,
+    description: "Analyze outside counsel invoices for compliance with billing guidelines and cost optimization. Control legal spend with AI that reviews outside counsel invoices for billing guideline compliance.",
+    category: "Legal Operations",
+    categoryColor: "bg-gray-100 text-gray-800"
+  },
+  {
+    id: 24,
+    name: "Competitor Analyzer",
+    specialty: "Competitive Intelligence Expert",
+    icon: TrendingUp,
+    description: "Analyzes earnings calls and filings for legal risks and strategic insights. Stay ahead of competitive and regulatory risks by analyzing competitor earnings calls and SEC filings.",
+    category: "Legal Operations",
+    categoryColor: "bg-gray-100 text-gray-800"
+  },
+  
+  // Knowledge & Configuration
+  {
+    id: 25,
+    name: "Firm IQ",
+    specialty: "AI Configuration Expert",
+    icon: Brain,
+    description: "Personalize White Shoe AI with your organization's context, style, and knowledge. Maximize AI effectiveness by configuring your organization's context across three key areas.",
+    category: "Knowledge & Config",
+    categoryColor: "bg-yellow-100 text-yellow-800"
   }
 ];
 
@@ -218,7 +299,7 @@ export default function Platform() {
               AI Productivity Layer for Legal Teams
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Three specialized AI associates working together to transform your legal workflow. 
+              Comprehensive AI associates working together to transform your legal workflow. 
               Built for teams that need enterprise capabilities without enterprise complexity.
             </p>
             <div className="mt-10">
@@ -241,27 +322,35 @@ export default function Platform() {
               <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl mb-6">
                 White Shoe Co-Counsel
               </h2>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
+                Your AI legal assistant that understands legal context
+              </h3>
               <p className="text-lg text-gray-600 mb-8">
-                Your AI legal research assistant that understands context and nuance. 
-                Natural conversation meets sophisticated legal analysis.
+                Work alongside AI that understands legal nuances and provides expert guidance on any legal topic. 
+                Get instant research assistance, case law analysis, regulatory interpretation, contract clause suggestions, 
+                and legal memorandum drafting support. Your always-available legal research partner that speaks your language in every practice area.
               </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-gray-700">Natural language legal queries</span>
+                  <span className="text-gray-700">Instant research assistance</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-gray-700">IRAC-structured analysis</span>
+                  <span className="text-gray-700">Case law analysis</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-gray-700">Multi-jurisdiction research</span>
+                  <span className="text-gray-700">Regulatory interpretation</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600" />
-                  <span className="text-gray-700">Citation tracking & verification</span>
+                  <span className="text-gray-700">Contract clause suggestions</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle className="h-5 w-5 text-green-600" />
+                  <span className="text-gray-700">Legal memorandum drafting support</span>
                 </div>
               </div>
 
@@ -293,7 +382,7 @@ export default function Platform() {
               White Shoe Associates
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              20 specialized AI assistants that handle specific legal workflows with expert precision.
+              25 specialized AI assistants that handle specific legal workflows with expert precision across every practice area.
             </p>
           </div>
 
@@ -309,15 +398,16 @@ export default function Platform() {
                       <Search className="h-6 w-6 text-pure-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl">Issue Spotter Associate</CardTitle>
-                      <p className="text-sm text-gray-500">Document Review Specialist</p>
+                      <CardTitle className="text-xl">Issue Spotter</CardTitle>
+                      <p className="text-sm text-gray-500">Risk Detection Specialist</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-6">
-                    Automated document review that catches what humans miss. Risk analysis, 
-                    compliance gaps, and suggested remediation.
+                    Identifies key legal risks in internal communications. Protect your organization by analyzing 
+                    internal emails, Slack messages, and documents for potential legal exposure with advanced AI 
+                    scanning for compliance violations, litigation risks, and policy breaches.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -325,15 +415,19 @@ export default function Platform() {
                       <ul className="space-y-3 mb-6">
                         <li className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">Contract risk analysis</span>
+                          <span className="text-sm">Risk scoring & categorization</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">Compliance detection</span>
+                          <span className="text-sm">Compliance violation detection</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">Risk scoring</span>
+                          <span className="text-sm">Litigation risk identification</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Remediation recommendations</span>
                         </li>
                       </ul>
                       <Button variant="outline" className="w-full">
@@ -344,7 +438,7 @@ export default function Platform() {
                     
                     <div className="aspect-square bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
                       <div className="text-center">
-                        <FileText className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                        <Search className="h-8 w-8 text-gray-400 mx-auto mb-2" />
                         <p className="text-xs text-gray-500">Screenshot</p>
                       </div>
                     </div>
@@ -352,23 +446,24 @@ export default function Platform() {
                 </CardContent>
               </Card>
 
-              {/* Workflow Automation Associate */}
+              {/* M&A Companion Associate */}
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
-                      <Workflow className="h-6 w-6 text-pure-white" />
+                      <Handshake className="h-6 w-6 text-pure-white" />
                     </div>
                     <div>
-                      <CardTitle className="text-xl">Workflow Associate</CardTitle>
-                      <p className="text-sm text-gray-500">Process Automation Expert</p>
+                      <CardTitle className="text-xl">M&A Companion</CardTitle>
+                      <p className="text-sm text-gray-500">M&A Legal Assistant</p>
                     </div>
                   </div>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-6">
-                    Streamline repetitive tasks and integrate with your existing tools. 
-                    Document generation, approvals, and deadline tracking.
+                    Your AI-powered M&A legal assistant for due diligence, issue tracking, and document analysis. 
+                    Streamline mergers and acquisitions with comprehensive AI-driven due diligence support, 
+                    document review automation, and integration planning.
                   </p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -376,15 +471,19 @@ export default function Platform() {
                       <ul className="space-y-3 mb-6">
                         <li className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">Document generation</span>
+                          <span className="text-sm">Document review automation</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">Approval workflows</span>
+                          <span className="text-sm">Risk identification</span>
                         </li>
                         <li className="flex items-center gap-2">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm">Deadline tracking</span>
+                          <span className="text-sm">Due diligence checklists</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Integration planning</span>
                         </li>
                       </ul>
                       <Button variant="outline" className="w-full">
@@ -395,7 +494,7 @@ export default function Platform() {
                     
                     <div className="aspect-square bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
                       <div className="text-center">
-                        <Workflow className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                        <Handshake className="h-8 w-8 text-gray-400 mx-auto mb-2" />
                         <p className="text-xs text-gray-500">Screenshot</p>
                       </div>
                     </div>
@@ -427,7 +526,7 @@ export default function Platform() {
                               <IconComponent className="h-5 w-5 text-pure-white" />
                             </div>
                             <div className="flex-1">
-                              <Badge variant="outline" className="text-xs mb-1">
+                              <Badge variant="outline" className={`text-xs mb-1 ${associate.categoryColor}`}>
                                 {associate.category}
                               </Badge>
                             </div>
@@ -457,8 +556,109 @@ export default function Platform() {
         </div>
       </section>
 
-      {/* Integrations Section */}
+      {/* Key Benefits Section */}
       <section className="py-24 sm:py-32 bg-ice-fog">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <Badge className="mb-6 bg-slate-docket text-pure-white">Platform Benefits</Badge>
+            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              Key Benefits Across All Associates
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Advanced AI capabilities designed specifically for legal professionals
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-3">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Brain className="h-6 w-6 text-slate-docket" />
+                  AI-Powered Intelligence
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Advanced LLM orchestration with Google Gemini and OpenAI integration for sophisticated legal analysis and reasoning.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Database className="h-6 w-6 text-slate-docket" />
+                  Contextual Grounding
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Retrieval Augmented Generation (RAG) using your Knowledge Base for personalized, accurate responses tailored to your organization.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Shield className="h-6 w-6 text-slate-docket" />
+                  Compliance-First
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Built-in regulatory awareness and risk assessment across all practice areas and jurisdictions.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Workflow className="h-6 w-6 text-slate-docket" />
+                  Workflow Integration
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Seamless integration with existing legal processes and tools, enhancing productivity without disruption.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Scale className="h-6 w-6 text-slate-docket" />
+                  Scalable Solutions
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  From individual tasks to enterprise-wide legal operations, designed to scale with your organization's needs.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-3">
+                  <Lock className="h-6 w-6 text-slate-docket" />
+                  Security & Privacy
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600">
+                  Enterprise-grade security with role-based access control and continuous learning that improves with your organization's data.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Integrations Section */}
+      <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <Badge className="mb-6 bg-slate-docket text-pure-white">Platform Connectivity</Badge>
