@@ -16,9 +16,9 @@ import {
   Users,
   Building2,
   Briefcase,
-  Document as DocumentIcon,
-  Grid2X2 as Grid2X2Icon,
-  DollarSign as DollarSignIcon
+  FileText,
+  Grid2X2,
+  DollarSign
 } from "lucide-react";
 
 export default function Index() {
@@ -191,27 +191,53 @@ export default function Index() {
               We are focused on output that matters, not time.
             </p>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <Card className="bg-slate-docket text-pure-white">
-              <CardContent className="p-8">
-                <div className="text-center">
-                  <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-3">
-                    <div>
-                      <p className="text-4xl font-bold">130</p>
-                      <p className="text-sm opacity-90 leading-relaxed">pages of work product per White Shoe Billable Hour</p>
-                    </div>
-                    <div>
-                      <p className="text-4xl font-bold">20</p>
-                      <p className="text-sm opacity-90 leading-relaxed">Practice Areas to support your every need</p>
-                    </div>
-                    <div>
-                      <p className="text-4xl font-bold">$19</p>
-                      <p className="text-sm opacity-90 leading-relaxed">a monthly price that enables support for everyone</p>
-                    </div>
+          <div className="mx-auto mt-16 max-w-6xl sm:mt-20 lg:mt-24">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              {/* Pages Statistic */}
+              <Card className="group relative overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-slate-docket to-slate-docket/90">
+                <CardContent className="p-8 text-center text-pure-white relative">
+                  <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+                    <FileText className="h-12 w-12" />
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="relative z-10">
+                    <p className="text-5xl font-bold mb-4">130</p>
+                    <p className="text-lg leading-relaxed opacity-90">
+                      pages of work product per White Shoe Billable Hour
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Practice Areas Statistic */}
+              <Card className="group relative overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-slate-docket/90 to-slate-docket">
+                <CardContent className="p-8 text-center text-pure-white relative">
+                  <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+                    <Grid2X2 className="h-12 w-12" />
+                  </div>
+                  <div className="relative z-10">
+                    <p className="text-5xl font-bold mb-4">20</p>
+                    <p className="text-lg leading-relaxed opacity-90">
+                      Practice Areas to support your every need
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Pricing Statistic */}
+              <Card className="group relative overflow-hidden border-none shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-slate-docket to-slate-docket/80">
+                <CardContent className="p-8 text-center text-pure-white relative">
+                  <div className="absolute top-4 right-4 opacity-20 group-hover:opacity-30 transition-opacity">
+                    <DollarSign className="h-12 w-12" />
+                  </div>
+                  <div className="relative z-10">
+                    <p className="text-5xl font-bold mb-4">$19</p>
+                    <p className="text-lg leading-relaxed opacity-90">
+                      a monthly price that enables support for everyone
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
