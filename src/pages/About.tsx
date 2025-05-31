@@ -10,42 +10,8 @@ import {
   Lightbulb, 
   Scale,
   Users,
-  Rocket,
   Award
 } from "lucide-react";
-
-const timeline = [
-  {
-    year: "2024",
-    quarter: "Q1",
-    title: "Company Founded",
-    description: "White Shoe AI incorporated with the mission to democratize legal AI"
-  },
-  {
-    year: "2024", 
-    quarter: "Q2",
-    title: "Product Development",
-    description: "Core AI Associates developed and tested with beta legal teams"
-  },
-  {
-    year: "2024",
-    quarter: "Q3", 
-    title: "Security & Compliance",
-    description: "SOC 2 Type II certification achieved, enterprise security implemented"
-  },
-  {
-    year: "2024",
-    quarter: "Q4",
-    title: "Public Beta Launch",
-    description: "Platform opened to select legal teams for testing and feedback"
-  },
-  {
-    year: "2025",
-    quarter: "Q1",
-    title: "General Availability",
-    description: "Full platform launch with all AI Associates and integrations"
-  }
-];
 
 const values = [
   {
@@ -145,60 +111,8 @@ export default function About() {
         </div>
       </section>
 
-      {/* Timeline Section */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Our Journey
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              From incorporation to platform launch, here's how we're building the future of legal AI.
-            </p>
-          </div>
-          
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-slate-docket h-full"></div>
-            
-            <div className="space-y-12">
-              {timeline.map((item, index) => (
-                <div key={`${item.year}-${item.quarter}`} className={`flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
-                    <Card className="hover:shadow-lg transition-shadow">
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge variant="outline" className="text-xs">
-                            {item.year} {item.quarter}
-                          </Badge>
-                          {item.year === "2025" && (
-                            <Badge className="bg-green-100 text-green-800 text-xs">
-                              <Rocket className="h-3 w-3 mr-1" />
-                              Upcoming
-                            </Badge>
-                          )}
-                        </div>
-                        <h3 className="text-lg font-semibold text-midnight-brief mb-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-gray-600 text-sm">
-                          {item.description}
-                        </p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                  
-                  {/* Timeline dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-slate-docket rounded-full border-4 border-pure-white"></div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Team Section */}
-      <section className="py-24 sm:py-32 bg-ice-fog">
+      <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center mb-16">
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
@@ -246,7 +160,7 @@ export default function About() {
       </section>
 
       {/* Heritage Section */}
-      <section className="py-24 sm:py-32">
+      <section className="py-24 sm:py-32 bg-ice-fog">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-center">
             <div>
