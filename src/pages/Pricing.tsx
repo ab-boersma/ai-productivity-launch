@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -96,7 +95,7 @@ const faqs = [
   },
   {
     question: "What's the difference between Clerk, Junior Associate, Senior Associate, and Partner plans?",
-    answer: "Clerk – $24/mo: 15 hours, one company profile, essential tools like Issue Spotter and Co-Counsel. Junior Associate – $49/mo: 60 hours, one profile, adds Corporate Secretary and Compliance Navigator. Senior Associate – $99/mo: 130 hours, three profiles, unlocks a dozen advanced associates for discovery, equity plans, insurance, and more. Partner – $249/mo: 300 hours (scalable), unlimited profiles, full library of associates, bespoke associates on request, and priority support. Each tier inherits everything in the tiers below it."
+    answer: "• Clerk – $24/mo: 15 hours, one company profile, essential tools like Issue Spotter and Co-Counsel.\n• Junior Associate – $49/mo: 60 hours, one profile, adds Corporate Secretary and Compliance Navigator.\n• Senior Associate – $99/mo: 130 hours, three profiles, unlocks a dozen advanced associates for discovery, equity plans, insurance, and more.\n• Partner – $249/mo: 300 hours (scalable), unlimited profiles, full library of associates, bespoke associates on request, and priority support.\n\nEach tier inherits everything in the tiers below it."
   },
   {
     question: "Which plan is best for a solo lawyer, small firm, or in-house team?",
