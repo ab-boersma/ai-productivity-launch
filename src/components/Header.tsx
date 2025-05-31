@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Platform", href: "/platform" },
-  { name: "Use Cases", href: "/use-cases" },
+  { name: "Practice Areas", href: "/practice-areas" },
   { name: "Pricing", href: "/pricing" },
   { name: "Resources", href: "/resources" },
   { name: "About", href: "/about" },
@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
             <span className="font-garamond text-2xl font-bold text-midnight-brief tracking-garamond">
-              White Shoe AI
+              White Shoe
             </span>
           </Link>
         </div>
@@ -53,10 +53,13 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
+          <Link to="/signin" className="text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
+            Sign In
+          </Link>
           <Link to="/contact">
             <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white btn-ripple">
-              Request Demo
+              Sign Up
             </Button>
           </Link>
         </div>
@@ -70,7 +73,7 @@ export function Header() {
             <div className="flex items-center justify-between">
               <Link to="/" className="-m-1.5 p-1.5">
                 <span className="font-garamond text-xl font-bold text-midnight-brief tracking-garamond">
-                  White Shoe AI
+                  White Shoe
                 </span>
               </Link>
               <Button
@@ -101,13 +104,20 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="py-6">
+                <div className="py-6 space-y-3">
+                  <Link
+                    to="/signin"
+                    className="text-base font-medium text-midnight-brief hover:text-slate-docket transition-colors"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    Sign In
+                  </Link>
                   <Link
                     to="/contact"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
-                      Request Demo
+                      Sign Up
                     </Button>
                   </Link>
                 </div>
