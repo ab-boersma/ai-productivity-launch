@@ -3,22 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const testimonials = [
   {
-    quote: "White Shoe streamlines our legal analysis and document drafting in ways I never thought possible. My team is easily 3x more productive, and the quality of our output has improved dramatically.",
-    author: "Sarah Chen",
-    role: "General Counsel",
-    company: "TechCorp"
+    quote: "White Shoe streamlines our legal analysis and document drafting in ways I never thought possible. My team is easily 3x more productive, and the quality of our output has improved dramatically."
   },
   {
-    quote: "Unlike other legal AI tools that require extensive training and setup, this solution was intuitive from day one and knows our business. Finally, an AI platform that understands how legal teams actually work.",
-    author: "Michael Rodriguez",
-    role: "Legal Director", 
-    company: "GrowthCo"
+    quote: "Unlike other legal AI tools that require extensive training and setup, this solution was intuitive from day one and knows our business. Finally, an AI platform that understands how legal teams actually work."
   },
   {
-    quote: "We evaluated several legal AI platforms, but this was the only one that didn't feel like we needed a computer science degree to use effectively. The accessibility and the price is unmatched.",
-    author: "Jennifer Walsh",
-    role: "VP Legal",
-    company: "InnovateLtd"
+    quote: "We evaluated several legal AI platforms, but this was the only one that didn't feel like we needed a computer science degree to use effectively. The accessibility and the price is unmatched."
   }
 ];
 
@@ -35,13 +26,9 @@ export function SocialProofSection() {
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6">
-                <blockquote className="text-gray-600 mb-6">
+                <blockquote className="text-gray-600">
                   "{testimonial.quote}"
                 </blockquote>
-                <div>
-                  <p className="font-semibold text-midnight-brief">{testimonial.author}</p>
-                  <p className="text-sm text-gray-500">{testimonial.role}, {testimonial.company}</p>
-                </div>
               </CardContent>
             </Card>
           ))}
