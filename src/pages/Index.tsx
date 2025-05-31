@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -154,7 +155,7 @@ export default function Index() {
                 },
                 { 
                   title: "Secure & Compliant", 
-                  description: "White Shoe believes your data is your business. Your data is protected and we never train AI models your data—because trust is non-negotiable." 
+                  description: "Every word is encrypted, ring-fenced, and never used to train our models. Confidentiality isn't a feature; it's the foundation." 
                 }
               ].map((item, index) => (
                 <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow bg-pure-white">
