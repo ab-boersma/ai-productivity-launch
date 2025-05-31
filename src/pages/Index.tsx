@@ -73,7 +73,7 @@ export default function Index() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Three AI Associates, One Platform
+              One Platform. The Productivity of a White Shoe Law Firm.
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
               Everything you need to supercharge your legal team's productivity
@@ -86,10 +86,10 @@ export default function Index() {
                   <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
                     <MessageSquare className="h-6 w-6 text-pure-white" aria-hidden="true" />
                   </div>
-                  Co-Counsel Chat
+                  White Shoe Co-Counsel
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-600">
-                  Get instant answers to complex legal questions. Our AI understands context and provides detailed, accurate responses.
+                  First of its kind practice area specific Legal AI support. Our AI understands your practice and increases your productivity.
                 </dd>
               </div>
               <div className="relative pl-16">
@@ -97,10 +97,10 @@ export default function Index() {
                   <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
                     <Search className="h-6 w-6 text-pure-white" aria-hidden="true" />
                   </div>
-                  Issue Spotter
+                  White Shoe Associates
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-600">
-                  Automatically identify potential legal issues in contracts and documents before they become problems.
+                  taking repeatable workstreams to predictable workflows to allow you to focus on counseling businesses forward.
                 </dd>
               </div>
               <div className="relative pl-16">
@@ -108,10 +108,10 @@ export default function Index() {
                   <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
                     <Workflow className="h-6 w-6 text-pure-white" aria-hidden="true" />
                   </div>
-                  Workflow Automation
+                  User Builder Teams
                 </dt>
                 <dd className="mt-2 text-base leading-7 text-gray-600">
-                  Streamline repetitive tasks and integrate seamlessly with your existing tools and processes.
+                  We're not just tech geeks—we build the tools we've needed at top firms and Fortune 500s to drive real impact.
                 </dd>
               </div>
             </dl>
