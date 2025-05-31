@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -120,54 +119,53 @@ export default function Index() {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-24 sm:py-32 bg-ice-fog">
+      <section className="py-16 sm:py-20 bg-ice-fog">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
               What Makes White Shoe Different?
             </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
+            <p className="mt-4 text-lg leading-8 text-gray-600">
               There's a lot of AI out there. There's only one White Shoe.
             </p>
           </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-1 max-w-4xl mx-auto">
+          <div className="mx-auto mt-12 max-w-4xl">
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[
                 { 
-                  step: "1", 
                   title: "Accessible AI", 
                   description: "Enterprise-grade legal support at a starting price every lawyer can afford." 
                 },
                 { 
-                  step: "2", 
                   title: "Practice-Area Precision", 
                   description: "Chat models tuned to your specific discipline for answers that hit the mark." 
                 },
                 { 
-                  step: "3", 
                   title: "Business-Savvy Responses", 
                   description: "Outputs echo your firm's voice and priorities—always context-aware." 
                 },
                 { 
-                  step: "4", 
                   title: "Seamless Integration", 
                   description: "Lives inside Slack, Outlook, Word, and more—no workflow disruption." 
                 },
                 { 
-                  step: "5", 
                   title: "Collaboration-First Design", 
                   description: "Turn questions into briefs, co-edit with colleagues, and advise clients—all within White Shoe." 
                 }
               ].map((item, index) => (
-                <div key={item.step} className="flex items-start gap-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-docket text-pure-white font-bold text-sm flex-shrink-0 mt-1">
-                    {item.step}
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                </div>
+                <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow bg-pure-white">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-docket text-pure-white font-bold text-xs flex-shrink-0 mt-0.5">
+                        {index + 1}
+                      </div>
+                      <div>
+                        <h3 className="text-base font-semibold text-midnight-brief mb-2">{item.title}</h3>
+                        <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
