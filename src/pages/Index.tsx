@@ -1,5 +1,4 @@
 
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -17,9 +16,9 @@ import {
   Users,
   Building2,
   Briefcase,
-  FileText,
-  Grid2X2,
-  DollarSign
+  Document as DocumentIcon,
+  Grid2X2 as Grid2X2Icon,
+  DollarSign as DollarSignIcon
 } from "lucide-react";
 
 export default function Index() {
