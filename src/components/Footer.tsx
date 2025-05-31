@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,7 +6,7 @@ import { Linkedin, Twitter } from "lucide-react";
 const navigation = {
   main: [
     { name: "Platform", href: "/platform" },
-    { name: "Use Cases", href: "/use-cases" },
+    { name: "Practice Areas", href: "/practice-areas" },
     { name: "Pricing", href: "/pricing" },
     { name: "Resources", href: "/resources" },
     { name: "About", href: "/about" },
