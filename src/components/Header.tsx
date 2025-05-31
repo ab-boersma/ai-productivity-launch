@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -53,8 +52,8 @@ export function Header() {
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4">
-          <Link to="/signin" className="text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 lg:items-center">
+          <Link to="/signin" className="flex items-center px-3 py-2 text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
             Sign In
           </Link>
           <Link to="/contact">
