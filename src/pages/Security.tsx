@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -160,53 +161,98 @@ export default function Security() {
       {/* Our Security Philosophy */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Our Security Philosophy
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              White Shoe is designed to help legal teams work confidently with their sensitive data. We follow security best practices and focus on these key areas:
-            </p>
-          </div>
-          
           <div className="mx-auto max-w-4xl">
-            <Card className="mb-12">
-              <CardContent className="p-8">
-                <div className="grid grid-cols-1 gap-6">
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700">Privacy-first design and development</p>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl mb-6">
+                Our Security Philosophy
+              </h2>
+              <p className="text-xl leading-8 text-gray-700 max-w-3xl mx-auto">
+                White Shoe is designed to help legal teams work confidently with their sensitive data. 
+                We follow security best practices and focus on these key areas:
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+              {/* Key Areas */}
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-8 h-8 bg-slate-docket/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-slate-docket/20 transition-colors">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700">Secure cloud infrastructure from trusted providers</p>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700">Continuous monitoring and proactive security measures</p>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700">Transparent data handling and privacy policies</p>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-2 h-2 bg-slate-docket rounded-full mt-3 flex-shrink-0"></div>
-                    <p className="text-lg text-gray-700">Regular security reviews</p>
+                  <div>
+                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Privacy-first design and development</h3>
+                    <p className="text-gray-600">Every feature is built with privacy considerations from the ground up.</p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+                
+                <div className="flex items-start gap-4 group">
+                  <div className="w-8 h-8 bg-slate-docket/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-slate-docket/20 transition-colors">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Secure cloud infrastructure from trusted providers</h3>
+                    <p className="text-gray-600">We partner with leading cloud providers who maintain the highest security standards.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4 group">
+                  <div className="w-8 h-8 bg-slate-docket/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-slate-docket/20 transition-colors">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Continuous monitoring and proactive security measures</h3>
+                    <p className="text-gray-600">24/7 monitoring and automated threat detection keep your data protected.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4 group">
+                  <div className="w-8 h-8 bg-slate-docket/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-slate-docket/20 transition-colors">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Transparent data handling and privacy policies</h3>
+                    <p className="text-gray-600">Clear, straightforward policies that explain exactly how we handle your data.</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4 group">
+                  <div className="w-8 h-8 bg-slate-docket/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-1 group-hover:bg-slate-docket/20 transition-colors">
+                    <div className="w-2 h-2 bg-slate-docket rounded-full"></div>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-midnight-brief mb-2">Regular security reviews</h3>
+                    <p className="text-gray-600">Ongoing assessments and improvements to maintain the highest security standards.</p>
+                  </div>
+                </div>
+              </div>
 
-            <Card className="bg-gray-50">
-              <CardHeader>
-                <CardTitle className="text-xl">Understanding Our Approach</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 leading-relaxed">
-                  We're committed to continuously improving our security practices as we grow. We work with infrastructure providers who maintain rigorous compliance certifications while we focus on building secure application-level protections for your data.
-                </p>
-              </CardContent>
-            </Card>
+              {/* Understanding Our Approach Card */}
+              <div className="lg:mt-0 mt-8">
+                <Card className="bg-gradient-to-br from-slate-docket/5 to-slate-docket/10 border-slate-docket/20 h-full">
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 bg-slate-docket rounded-lg flex items-center justify-center">
+                        <Shield className="h-5 w-5 text-pure-white" />
+                      </div>
+                      <CardTitle className="text-xl text-midnight-brief">Understanding Our Approach</CardTitle>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-700 leading-relaxed text-base">
+                      We're committed to continuously improving our security practices as we grow. We work with 
+                      infrastructure providers who maintain rigorous compliance certifications while we focus on 
+                      building secure application-level protections for your data.
+                    </p>
+                    <div className="mt-6 pt-6 border-t border-slate-docket/20">
+                      <div className="flex items-center gap-2 text-sm text-slate-docket font-medium">
+                        <CheckCircle className="h-4 w-4" />
+                        <span>Security-first development approach</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
