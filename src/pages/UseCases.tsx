@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -667,18 +666,6 @@ export default function UseCases() {
                           </li>
                         )}
                       </ul>
-                    </div>
-
-                    {/* CTA Buttons */}
-                    <div className="flex gap-2">
-                      <Button variant="outline" size="sm" className="flex-1">
-                        Learn More
-                      </Button>
-                      <Link to="/contact" className="flex-1">
-                        <Button size="sm" className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
-                          Try Now
-                        </Button>
-                      </Link>
                     </div>
                   </CardContent>
                 </Card>
