@@ -94,14 +94,6 @@ const faqs = [
     answer: "A White Shoe Billable Hour isn't a stopwatch—it's output. One hour represents roughly 125 pages of finished work product (drafts, analyses, briefs). When you hit your cap, additional hours are available for purchase for less than 0.5% of the cost of an law firm associate to support your work."
   },
   {
-    question: "What's the difference between Clerk, Junior Associate, Senior Associate, and Partner plans?",
-    answer: "• Clerk – $24/mo: 15 hours, one company profile, essential tools like Issue Spotter and Co-Counsel.\n• Junior Associate – $49/mo: 60 hours, one profile, adds Corporate Secretary and Compliance Navigator.\n• Senior Associate – $99/mo: 130 hours, three profiles, unlocks a dozen advanced associates for discovery, equity plans, insurance, and more.\n• Partner – $249/mo: 300 hours (scalable), unlimited profiles, full library of associates, bespoke associates on request, and priority support.\n\nEach tier inherits everything in the tiers below it."
-  },
-  {
-    question: "Which plan is best for a solo lawyer, small firm, or in-house team?",
-    answer: "Solo or boutique practice: start with Clerk; upgrade to Junior Associate as your workload grows. Small firms or lean corporate teams (5–15 lawyers): Junior Associate if your matters are routine, Senior Associate if you cover multiple practice areas. Busy GCs, venture-backed scale-ups, or high-stakes litigators: Senior Associate or Partner for higher hour pools and advanced associates."
-  },
-  {
     question: "Can I upgrade or downgrade my plan at any time, and how is proration handled?",
     answer: "Yes. Upgrades take effect instantly with a prorated charge for the rest of the billing period. Downgrades kick in on your next renewal date so you get full value from the hours you've already purchased."
   },
