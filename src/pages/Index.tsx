@@ -151,6 +151,10 @@ export default function Index() {
                 { 
                   title: "Collaboration-First Design", 
                   description: "Turn questions into briefs, co-edit with colleagues, and advise clients—all within White Shoe." 
+                },
+                { 
+                  title: "Secure & Compliant", 
+                  description: "White Shoe believes your data is your business. Your data is protected and we never train AI models your data—because trust is non-negotiable." 
                 }
               ].map((item, index) => (
                 <Card key={index} className="border-none shadow-sm hover:shadow-md transition-shadow bg-pure-white">
