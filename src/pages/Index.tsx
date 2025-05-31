@@ -1,5 +1,3 @@
-
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -144,7 +142,7 @@ export default function Index() {
                 },
                 { 
                   title: "Business-Savvy Responses", 
-                  description: "Outputs echo your firm's voice and priorities—always context-aware." 
+                  description: "Outputs echo your team's voice and priorities—always context-aware." 
                 },
                 { 
                   title: "Seamless Integration", 
@@ -271,4 +269,3 @@ export default function Index() {
     </div>
   );
 }
-
