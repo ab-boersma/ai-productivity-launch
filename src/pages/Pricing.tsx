@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -115,7 +116,7 @@ const faqs = [
   },
   {
     question: "Is there a free trial or demo?",
-    answer: "Yes. Book a live demo with our team to see real documents in action, or request a seven-day sandbox with five Billable Hours—no credit card required."
+    answer: "Yes. A free trial is available with a redemption code. Product demos are available upon request. Reach out to aaron@white-shoe.ai"
   },
   {
     question: "Are setup fees, onboarding costs, or long-term contracts required?",
