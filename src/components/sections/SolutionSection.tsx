@@ -2,7 +2,7 @@ import { MessageSquare, Search, Workflow } from "lucide-react";
 
 export function SolutionSection() {
   return (
-    <section className="py-24 sm:py-32 bg-gray-50">
+    <section className="py-24 sm:py-32 bg-pure-white">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
