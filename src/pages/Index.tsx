@@ -1,4 +1,5 @@
 
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -182,10 +183,10 @@ export default function Index() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:text-center">
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Measurable Impact
+              White Shoe Drives Impact
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              See real results from day one
+              We are focused on output that matters, not time.
             </p>
           </div>
           <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
@@ -195,22 +196,22 @@ export default function Index() {
                   <h3 className="text-2xl font-bold">ROI Calculator</h3>
                   <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-3">
                     <div>
-                      <p className="text-4xl font-bold">8 hrs</p>
-                      <p className="text-sm opacity-90">saved per attorney/week</p>
+                      <p className="text-4xl font-bold">130</p>
+                      <p className="text-sm opacity-90">pages of work product per White Shoe Billable Hour</p>
                     </div>
                     <div>
-                      <p className="text-4xl font-bold">15×</p>
-                      <p className="text-sm opacity-90">return on investment</p>
+                      <p className="text-4xl font-bold">20</p>
+                      <p className="text-sm opacity-90">Practice Areas to support your every need</p>
                     </div>
                     <div>
-                      <p className="text-4xl font-bold">$50K+</p>
-                      <p className="text-sm opacity-90">annual savings per team</p>
+                      <p className="text-4xl font-bold">$19</p>
+                      <p className="text-sm opacity-90">a monthly price that enables support for everyone</p>
                     </div>
                   </div>
                   <div className="mt-8">
-                    <Link to="/contact">
+                    <Link to="/pricing">
                       <Button variant="outline" className="border-pure-white text-pure-white hover:bg-pure-white hover:text-slate-docket">
-                        Calculate Your ROI
+                        Pricing
                       </Button>
                     </Link>
                   </div>
