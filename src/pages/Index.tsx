@@ -5,7 +5,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { ProblemInsightSection } from "@/components/sections/ProblemInsightSection";
 import { SolutionSection } from "@/components/sections/SolutionSection";
 import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { SocialProofSection } from "@/components/sections/SocialProofSection";
 
 export default function Index() {
   return (
@@ -15,7 +14,6 @@ export default function Index() {
       <ProblemInsightSection />
       <SolutionSection />
       <HowItWorksSection />
-      <SocialProofSection />
       <Footer />
     </div>
   );
