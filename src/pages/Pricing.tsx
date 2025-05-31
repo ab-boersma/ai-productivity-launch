@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -141,10 +140,6 @@ const faqs = [
   {
     question: "Do you offer volume, nonprofit, or educational discounts?",
     answer: "We do. Contact sales for tailored pricing, and ask about pro-bono credits for legal-aid clinics."
-  },
-  {
-    question: "How fast is customer support, and what channels are included with each tier?",
-    answer: "Clerk: email only, responses within 24 hours. Junior Associate: email plus live chat, responses within 12 hours. Senior Associate: email, chat, and callback phone support, responses within 8 hours. Partner: dedicated Customer Success Manager, priority email and chat, two-hour response SLA plus uptime credits."
   },
   {
     question: "Can multiple users share a single subscription, and how are additional seats billed?",
