@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Link } from "react-router-dom";
 import { 
   MessageSquare, 
@@ -19,8 +20,189 @@ import {
   FileText,
   Users,
   Clock,
-  TrendingUp
+  TrendingUp,
+  Scale,
+  Briefcase,
+  Building,
+  Gavel,
+  Globe,
+  Lock,
+  Target,
+  Brain,
+  Calculator,
+  Database,
+  Eye,
+  Book,
+  Landmark,
+  UserCheck,
+  Award,
+  Lightbulb,
+  BarChart
 } from "lucide-react";
+
+// Associate data for the carousel
+const allAssociates = [
+  {
+    id: 1,
+    name: "Issue Spotter Associate",
+    specialty: "Document Review Specialist",
+    icon: Search,
+    description: "Automated document review that catches what humans miss. Risk analysis and compliance gaps.",
+    category: "Review"
+  },
+  {
+    id: 2,
+    name: "Workflow Associate",
+    specialty: "Process Automation Expert", 
+    icon: Workflow,
+    description: "Streamline repetitive tasks and integrate with existing tools. Document generation and approvals.",
+    category: "Automation"
+  },
+  {
+    id: 3,
+    name: "Contract Associate",
+    specialty: "Contract Analysis Expert",
+    icon: FileText,
+    description: "Deep contract analysis, clause optimization, and risk assessment for all agreement types.",
+    category: "Corporate"
+  },
+  {
+    id: 4,
+    name: "Litigation Associate", 
+    specialty: "Case Strategy Specialist",
+    icon: Gavel,
+    description: "Case law research, motion drafting, and discovery management for complex litigation.",
+    category: "Litigation"
+  },
+  {
+    id: 5,
+    name: "IP Associate",
+    specialty: "Intellectual Property Expert",
+    icon: Lightbulb,
+    description: "Patent research, trademark analysis, and IP portfolio management across jurisdictions.",
+    category: "IP"
+  },
+  {
+    id: 6,
+    name: "Corporate Associate",
+    specialty: "Corporate Transactions Expert",
+    icon: Building,
+    description: "M&A due diligence, corporate governance, and securities compliance analysis.",
+    category: "Corporate"
+  },
+  {
+    id: 7,
+    name: "Regulatory Associate",
+    specialty: "Compliance Specialist",
+    icon: Shield,
+    description: "Regulatory analysis, compliance monitoring, and policy interpretation across industries.",
+    category: "Regulatory"
+  },
+  {
+    id: 8,
+    name: "Tax Associate",
+    specialty: "Tax Law Expert",
+    icon: Calculator,
+    description: "Tax planning, regulatory compliance, and structuring advice for complex transactions.",
+    category: "Tax"
+  },
+  {
+    id: 9,
+    name: "Employment Associate",
+    specialty: "Labor & Employment Expert",
+    icon: Users,
+    description: "Employment law compliance, workplace policy review, and discrimination analysis.",
+    category: "Employment"
+  },
+  {
+    id: 10,
+    name: "Real Estate Associate",
+    specialty: "Property Law Expert",
+    icon: Landmark,
+    description: "Property transactions, zoning analysis, and real estate development compliance.",
+    category: "Real Estate"
+  },
+  {
+    id: 11,
+    name: "Environmental Associate",
+    specialty: "Environmental Law Expert",
+    icon: Globe,
+    description: "Environmental compliance, permitting analysis, and sustainability policy review.",
+    category: "Environmental"
+  },
+  {
+    id: 12,
+    name: "Securities Associate",
+    specialty: "Securities Law Expert",
+    icon: TrendingUp,
+    description: "Securities compliance, disclosure analysis, and public company governance.",
+    category: "Securities"
+  },
+  {
+    id: 13,
+    name: "Privacy Associate",
+    specialty: "Data Privacy Expert",
+    icon: Lock,
+    description: "GDPR/CCPA compliance, privacy policy analysis, and data governance frameworks.",
+    category: "Privacy"
+  },
+  {
+    id: 14,
+    name: "Immigration Associate",
+    specialty: "Immigration Law Expert",
+    icon: UserCheck,
+    description: "Visa applications, immigration compliance, and workforce mobility planning.",
+    category: "Immigration"
+  },
+  {
+    id: 15,
+    name: "Antitrust Associate",
+    specialty: "Competition Law Expert",
+    icon: Scale,
+    description: "Merger clearance, competition analysis, and antitrust compliance review.",
+    category: "Antitrust"
+  },
+  {
+    id: 16,
+    name: "Banking Associate",
+    specialty: "Financial Services Expert",
+    icon: Briefcase,
+    description: "Banking regulations, financial compliance, and lending documentation review.",
+    category: "Banking"
+  },
+  {
+    id: 17,
+    name: "Insurance Associate",
+    specialty: "Insurance Law Expert",
+    icon: Award,
+    description: "Policy analysis, claims review, and insurance regulatory compliance.",
+    category: "Insurance"
+  },
+  {
+    id: 18,
+    name: "Healthcare Associate",
+    specialty: "Healthcare Law Expert",
+    icon: Brain,
+    description: "HIPAA compliance, healthcare regulations, and medical device approval processes.",
+    category: "Healthcare"
+  },
+  {
+    id: 19,
+    name: "Ethics Associate",
+    specialty: "Legal Ethics Expert",
+    icon: Target,
+    description: "Professional responsibility, conflict analysis, and ethics opinion guidance.",
+    category: "Ethics"
+  },
+  {
+    id: 20,
+    name: "Analytics Associate",
+    specialty: "Legal Analytics Expert",
+    icon: BarChart,
+    description: "Data-driven insights, performance metrics, and predictive legal analytics.",
+    category: "Analytics"
+  }
+];
 
 export default function Platform() {
   return (
@@ -111,112 +293,166 @@ export default function Platform() {
               White Shoe Associates
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Specialized AI assistants that handle specific legal workflows with expert precision.
+              20 specialized AI assistants that handle specific legal workflows with expert precision.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            {/* Issue Spotter Associate */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
-                    <Search className="h-6 w-6 text-pure-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl">Issue Spotter Associate</CardTitle>
-                    <p className="text-sm text-gray-500">Document Review Specialist</p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-6">
-                  Automated document review that catches what humans miss. Risk analysis, 
-                  compliance gaps, and suggested remediation.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <ul className="space-y-3 mb-6">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-sm">Contract risk analysis</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-sm">Compliance detection</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-sm">Risk scoring</span>
-                      </li>
-                    </ul>
-                    <Button variant="outline" className="w-full">
-                      <Play className="h-4 w-4 mr-2" />
-                      View Demo
-                    </Button>
-                  </div>
-                  
-                  <div className="aspect-square bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                    <div className="text-center">
-                      <FileText className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                      <p className="text-xs text-gray-500">Screenshot</p>
+          {/* Featured Associates */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-midnight-brief mb-8 text-center">Featured Associates</h3>
+            <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+              {/* Issue Spotter Associate */}
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
+                      <Search className="h-6 w-6 text-pure-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">Issue Spotter Associate</CardTitle>
+                      <p className="text-sm text-gray-500">Document Review Specialist</p>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-6">
+                    Automated document review that catches what humans miss. Risk analysis, 
+                    compliance gaps, and suggested remediation.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <ul className="space-y-3 mb-6">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Contract risk analysis</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Compliance detection</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Risk scoring</span>
+                        </li>
+                      </ul>
+                      <Button variant="outline" className="w-full">
+                        <Play className="h-4 w-4 mr-2" />
+                        View Demo
+                      </Button>
+                    </div>
+                    
+                    <div className="aspect-square bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                      <div className="text-center">
+                        <FileText className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                        <p className="text-xs text-gray-500">Screenshot</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
 
-            {/* Workflow Automation Associate */}
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
-                    <Workflow className="h-6 w-6 text-pure-white" />
-                  </div>
-                  <div>
-                    <CardTitle className="text-xl">Workflow Associate</CardTitle>
-                    <p className="text-sm text-gray-500">Process Automation Expert</p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-600 mb-6">
-                  Streamline repetitive tasks and integrate with your existing tools. 
-                  Document generation, approvals, and deadline tracking.
-                </p>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <ul className="space-y-3 mb-6">
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-sm">Document generation</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-sm">Approval workflows</span>
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <CheckCircle className="h-4 w-4 text-green-600" />
-                        <span className="text-sm">Deadline tracking</span>
-                      </li>
-                    </ul>
-                    <Button variant="outline" className="w-full">
-                      <Play className="h-4 w-4 mr-2" />
-                      View Demo
-                    </Button>
-                  </div>
-                  
-                  <div className="aspect-square bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
-                    <div className="text-center">
-                      <Workflow className="h-8 w-8 text-gray-400 mx-auto mb-2" />
-                      <p className="text-xs text-gray-500">Screenshot</p>
+              {/* Workflow Automation Associate */}
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
+                      <Workflow className="h-6 w-6 text-pure-white" />
+                    </div>
+                    <div>
+                      <CardTitle className="text-xl">Workflow Associate</CardTitle>
+                      <p className="text-sm text-gray-500">Process Automation Expert</p>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600 mb-6">
+                    Streamline repetitive tasks and integrate with your existing tools. 
+                    Document generation, approvals, and deadline tracking.
+                  </p>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <ul className="space-y-3 mb-6">
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Document generation</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Approval workflows</span>
+                        </li>
+                        <li className="flex items-center gap-2">
+                          <CheckCircle className="h-4 w-4 text-green-600" />
+                          <span className="text-sm">Deadline tracking</span>
+                        </li>
+                      </ul>
+                      <Button variant="outline" className="w-full">
+                        <Play className="h-4 w-4 mr-2" />
+                        View Demo
+                      </Button>
+                    </div>
+                    
+                    <div className="aspect-square bg-gray-100 rounded-lg border-2 border-dashed border-gray-300 flex items-center justify-center">
+                      <div className="text-center">
+                        <Workflow className="h-8 w-8 text-gray-400 mx-auto mb-2" />
+                        <p className="text-xs text-gray-500">Screenshot</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* All Associates Carousel */}
+          <div>
+            <h3 className="text-2xl font-bold text-midnight-brief mb-8 text-center">All Associates</h3>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {allAssociates.map((associate) => {
+                  const IconComponent = associate.icon;
+                  return (
+                    <CarouselItem key={associate.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
+                      <Card className="h-full hover:shadow-md transition-shadow">
+                        <CardContent className="p-6">
+                          <div className="flex items-center gap-3 mb-4">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-docket">
+                              <IconComponent className="h-5 w-5 text-pure-white" />
+                            </div>
+                            <div className="flex-1">
+                              <Badge variant="outline" className="text-xs mb-1">
+                                {associate.category}
+                              </Badge>
+                            </div>
+                          </div>
+                          <h4 className="font-semibold text-lg mb-2 text-midnight-brief">
+                            {associate.name}
+                          </h4>
+                          <p className="text-sm text-gray-500 mb-3">
+                            {associate.specialty}
+                          </p>
+                          <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                            {associate.description}
+                          </p>
+                          <Button variant="outline" size="sm" className="w-full">
+                            Learn More
+                          </Button>
+                        </CardContent>
+                      </Card>
+                    </CarouselItem>
+                  );
+                })}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </section>
