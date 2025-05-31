@@ -716,51 +716,6 @@ export default function UseCases() {
         </div>
       </section>
 
-      {/* ROI Section */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Quantified Results Across Practice Areas
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Real metrics from legal teams using White Shoe AI across all practice areas
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Clock className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">8+</p>
-                <p className="text-sm text-gray-600">Hours saved per week</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Shield className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">90%</p>
-                <p className="text-sm text-gray-600">Reduction in missed risks</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <TrendingUp className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">15×</p>
-                <p className="text-sm text-gray-600">Return on investment</p>
-              </CardContent>
-            </Card>
-            <Card className="text-center">
-              <CardContent className="pt-6">
-                <Users className="h-8 w-8 text-slate-docket mx-auto mb-4" />
-                <p className="text-3xl font-bold text-midnight-brief">500+</p>
-                <p className="text-sm text-gray-600">Legal teams served</p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       <Footer />
     </div>
   );
