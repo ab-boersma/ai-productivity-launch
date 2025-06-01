@@ -1,3 +1,4 @@
+
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -115,11 +116,10 @@ export default function Security() {
           <div className="text-center animate-fade-up">
             <Badge className="mb-6 bg-slate-docket text-pure-white">Security</Badge>
             <h1 className="text-4xl font-bold tracking-garamond text-midnight-brief sm:text-6xl">
-              Bank-Grade Security for Your Legal Data
+              Your Legal Data, Protected
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Your most sensitive legal information deserves the highest level of protection. 
-              We've built enterprise-grade security from the ground up.
+              White Shoe is built with security as a priority. We leverage industry best practices to ensure your sensitive legal data remains protected and confidential.
             </p>
           </div>
         </div>
