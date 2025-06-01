@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -67,19 +66,19 @@ export function Header() {
         </div>
       </nav>
       
-      {/* Mobile menu - completely rebuilt */}
+      {/* Mobile menu - fixed overlap issues */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
-          {/* Backdrop */}
+          {/* Backdrop with higher z-index */}
           <div 
-            className="fixed inset-0 z-40 bg-black bg-opacity-25" 
+            className="fixed inset-0 z-50 bg-black/50" 
             onClick={closeMobileMenu}
           />
           
-          {/* Menu Panel */}
-          <div className="fixed top-0 right-0 z-50 h-full w-full max-w-sm bg-white shadow-xl">
+          {/* Menu Panel with solid background and highest z-index */}
+          <div className="fixed inset-y-0 right-0 z-60 w-full max-w-sm bg-pure-white shadow-2xl">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-pure-white">
               <Link to="/" onClick={closeMobileMenu}>
                 <span className="font-garamond text-xl font-bold text-midnight-brief">
                   White Shoe
@@ -89,15 +88,15 @@ export function Header() {
                 variant="ghost"
                 size="sm"
                 onClick={closeMobileMenu}
-                className="p-2"
+                className="p-2 text-midnight-brief hover:text-slate-docket"
               >
                 <X className="h-6 w-6" />
               </Button>
             </div>
             
             {/* Navigation Links */}
-            <div className="px-6 py-6">
-              <div className="space-y-1">
+            <div className="h-full bg-pure-white p-6">
+              <div className="space-y-2">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
@@ -105,8 +104,8 @@ export function Header() {
                     onClick={closeMobileMenu}
                     className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
                       location.pathname === item.href
-                        ? "text-slate-docket bg-ice-fog"
-                        : "text-midnight-brief hover:text-slate-docket hover:bg-ice-fog"
+                        ? "text-slate-docket bg-gray-100"
+                        : "text-midnight-brief hover:text-slate-docket hover:bg-gray-50"
                     }`}
                   >
                     {item.name}
@@ -119,7 +118,7 @@ export function Header() {
                 <Link
                   to="/signin"
                   onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-base font-medium text-midnight-brief hover:text-slate-docket hover:bg-ice-fog rounded-lg transition-colors"
+                  className="block px-4 py-3 text-base font-medium text-midnight-brief hover:text-slate-docket hover:bg-gray-50 rounded-lg transition-colors"
                 >
                   Sign In
                 </Link>
