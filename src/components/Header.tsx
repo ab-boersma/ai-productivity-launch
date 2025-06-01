@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -70,9 +69,16 @@ export function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden" role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-50" onClick={closeMobileMenu}></div>
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-pure-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div className="flex items-center justify-between">
+          {/* Backdrop overlay with lower z-index */}
+          <div 
+            className="fixed inset-0 z-40 bg-black/25" 
+            onClick={closeMobileMenu}
+            aria-hidden="true"
+          ></div>
+          
+          {/* Menu panel with higher z-index */}
+          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-pure-white px-6 py-6 sm:max-w-sm border-l border-gray-200 shadow-xl transform transition-transform duration-300 ease-in-out">
+            <div className="flex items-center justify-between mb-6">
               <Link to="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
                 <span className="font-garamond text-xl font-bold text-midnight-brief tracking-garamond">
                   White Shoe
@@ -82,23 +88,24 @@ export function Header() {
                 variant="ghost"
                 size="sm"
                 onClick={closeMobileMenu}
-                className="-m-2.5 rounded-md p-2.5 text-midnight-brief"
+                className="-m-2.5 rounded-md p-2.5 text-midnight-brief hover:bg-gray-100"
               >
                 <span className="sr-only">Close menu</span>
                 <X className="h-6 w-6" aria-hidden="true" />
               </Button>
             </div>
-            <div className="mt-6 flow-root">
-              <div className="-my-6 divide-y divide-gray-500/10">
+            
+            <div className="flow-root">
+              <div className="-my-6 divide-y divide-gray-200">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-medium leading-7 transition-colors hover:bg-ice-fog ${
+                      className={`-mx-3 block rounded-lg px-3 py-3 text-base font-medium leading-7 transition-all duration-200 ${
                         location.pathname === item.href
                           ? "text-slate-docket bg-ice-fog"
-                          : "text-midnight-brief"
+                          : "text-midnight-brief hover:bg-ice-fog hover:text-slate-docket"
                       }`}
                       onClick={closeMobileMenu}
                     >
@@ -106,10 +113,11 @@ export function Header() {
                     </Link>
                   ))}
                 </div>
-                <div className="py-6 space-y-3">
+                
+                <div className="py-6 space-y-4">
                   <Link
                     to="/signin"
-                    className="text-base font-medium text-midnight-brief hover:text-slate-docket transition-colors block"
+                    className="block px-3 py-2 text-base font-medium text-midnight-brief hover:text-slate-docket transition-colors rounded-lg hover:bg-ice-fog"
                     onClick={closeMobileMenu}
                   >
                     Sign In
@@ -117,8 +125,9 @@ export function Header() {
                   <Link
                     to="/contact"
                     onClick={closeMobileMenu}
+                    className="block"
                   >
-                    <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
+                    <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white shadow-sm">
                       Sign Up
                     </Button>
                   </Link>
