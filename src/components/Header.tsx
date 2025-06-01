@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -66,21 +67,21 @@ export function Header() {
         </div>
       </nav>
       
-      {/* Mobile menu */}
+      {/* Mobile menu - completely rebuilt */}
       {mobileMenuOpen && (
-        <div className="lg:hidden" role="dialog" aria-modal="true">
-          {/* Backdrop overlay with lower z-index */}
+        <div className="lg:hidden">
+          {/* Backdrop */}
           <div 
-            className="fixed inset-0 z-40 bg-black/25" 
+            className="fixed inset-0 z-40 bg-black bg-opacity-25" 
             onClick={closeMobileMenu}
-            aria-hidden="true"
-          ></div>
+          />
           
-          {/* Menu panel with higher z-index */}
-          <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-pure-white px-6 py-6 sm:max-w-sm border-l border-gray-200 shadow-xl transform transition-transform duration-300 ease-in-out">
-            <div className="flex items-center justify-between mb-6">
-              <Link to="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
-                <span className="font-garamond text-xl font-bold text-midnight-brief tracking-garamond">
+          {/* Menu Panel */}
+          <div className="fixed top-0 right-0 z-50 h-full w-full max-w-sm bg-white shadow-xl">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <Link to="/" onClick={closeMobileMenu}>
+                <span className="font-garamond text-xl font-bold text-midnight-brief">
                   White Shoe
                 </span>
               </Link>
@@ -88,50 +89,45 @@ export function Header() {
                 variant="ghost"
                 size="sm"
                 onClick={closeMobileMenu}
-                className="-m-2.5 rounded-md p-2.5 text-midnight-brief hover:bg-gray-100"
+                className="p-2"
               >
-                <span className="sr-only">Close menu</span>
-                <X className="h-6 w-6" aria-hidden="true" />
+                <X className="h-6 w-6" />
               </Button>
             </div>
             
-            <div className="flow-root">
-              <div className="-my-6 divide-y divide-gray-200">
-                <div className="space-y-2 py-6">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      className={`-mx-3 block rounded-lg px-3 py-3 text-base font-medium leading-7 transition-all duration-200 ${
-                        location.pathname === item.href
-                          ? "text-slate-docket bg-ice-fog"
-                          : "text-midnight-brief hover:bg-ice-fog hover:text-slate-docket"
-                      }`}
-                      onClick={closeMobileMenu}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-                
-                <div className="py-6 space-y-4">
+            {/* Navigation Links */}
+            <div className="px-6 py-6">
+              <div className="space-y-1">
+                {navigation.map((item) => (
                   <Link
-                    to="/signin"
-                    className="block px-3 py-2 text-base font-medium text-midnight-brief hover:text-slate-docket transition-colors rounded-lg hover:bg-ice-fog"
+                    key={item.name}
+                    to={item.href}
                     onClick={closeMobileMenu}
+                    className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
+                      location.pathname === item.href
+                        ? "text-slate-docket bg-ice-fog"
+                        : "text-midnight-brief hover:text-slate-docket hover:bg-ice-fog"
+                    }`}
                   >
-                    Sign In
+                    {item.name}
                   </Link>
-                  <Link
-                    to="/contact"
-                    onClick={closeMobileMenu}
-                    className="block"
-                  >
-                    <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white shadow-sm">
-                      Sign Up
-                    </Button>
-                  </Link>
-                </div>
+                ))}
+              </div>
+              
+              {/* Auth Links */}
+              <div className="mt-8 pt-6 border-t border-gray-200 space-y-4">
+                <Link
+                  to="/signin"
+                  onClick={closeMobileMenu}
+                  className="block px-4 py-3 text-base font-medium text-midnight-brief hover:text-slate-docket hover:bg-ice-fog rounded-lg transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link to="/contact" onClick={closeMobileMenu}>
+                  <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
+                    Sign Up
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>
