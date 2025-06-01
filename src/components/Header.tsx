@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -113,7 +112,7 @@ export function Header() {
                   </Link>
                 ))}
               </nav>
-              <div className="mt-8 space-y-3">
+              <div className="mt-8 space-y-4">
                 <Link
                   to="/signin"
                   onClick={closeMobileMenu}
