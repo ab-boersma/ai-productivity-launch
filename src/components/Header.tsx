@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -30,7 +29,6 @@ export function Header() {
           </Link>
         </div>
         
-        {/* Mobile menu button */}
         <div className="flex lg:hidden">
           <Button
             variant="ghost"
@@ -47,7 +45,6 @@ export function Header() {
           </Button>
         </div>
         
-        {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
@@ -64,7 +61,6 @@ export function Header() {
           ))}
         </div>
         
-        {/* Desktop Auth */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 lg:items-center">
           <Link to="/signin" className="flex items-center px-3 py-2 text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
             Sign In
@@ -77,18 +73,13 @@ export function Header() {
         </div>
       </nav>
       
-      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 z-50">
-          {/* Backdrop */}
           <div 
-            className="fixed inset-0 bg-black/50" 
+            className="fixed inset-0 bg-black/50 z-40" 
             onClick={closeMobileMenu}
           />
-          
-          {/* Menu Panel */}
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl">
-            {/* Header */}
+          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-pure-white bg-opacity-100 shadow-xl z-50">
             <div className="flex items-center justify-between p-6 border-b">
               <Link to="/" onClick={closeMobileMenu}>
                 <span className="font-garamond text-xl font-bold text-midnight-brief">
@@ -104,8 +95,6 @@ export function Header() {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            
-            {/* Navigation */}
             <div className="p-6">
               <nav className="space-y-1">
                 {navigation.map((item) => (
@@ -123,8 +112,6 @@ export function Header() {
                   </Link>
                 ))}
               </nav>
-              
-              {/* Mobile Auth */}
               <div className="mt-8 space-y-3">
                 <Link
                   to="/signin"
