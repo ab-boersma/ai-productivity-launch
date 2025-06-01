@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -79,10 +80,10 @@ export function Header() {
             className="fixed inset-0 bg-black/50 z-40" 
             onClick={closeMobileMenu}
           />
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-pure-white bg-opacity-100 shadow-xl z-50">
-            <div className="flex items-center justify-between p-6 border-b">
+          <div className="fixed inset-y-0 right-0 w-full max-w-sm z-50 shadow-xl" style={{ backgroundColor: '#FFFFFF' }}>
+            <div className="flex items-center justify-between p-6 border-b bg-white">
               <Link to="/" onClick={closeMobileMenu}>
-                <span className="font-garamond text-xl font-bold text-midnight-brief">
+                <span className="font-garamond text-xl font-bold text-[#0F172A]">
                   White Shoe
                 </span>
               </Link>
@@ -95,7 +96,7 @@ export function Header() {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            <div className="p-6">
+            <div className="p-6 bg-white">
               <nav className="space-y-1">
                 {navigation.map((item) => (
                   <Link
@@ -105,7 +106,7 @@ export function Header() {
                     className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                       location.pathname === item.href
                         ? "bg-slate-docket text-white"
-                        : "text-midnight-brief hover:bg-gray-100"
+                        : "text-[#0F172A] hover:bg-gray-100"
                     }`}
                   >
                     {item.name}
@@ -116,7 +117,7 @@ export function Header() {
                 <Link
                   to="/signin"
                   onClick={closeMobileMenu}
-                  className="block w-full text-center px-4 py-3 border border-gray-300 rounded-lg text-base font-medium text-midnight-brief hover:bg-gray-50"
+                  className="block w-full text-center px-4 py-3 border border-gray-300 rounded-lg text-base font-medium text-[#0F172A] hover:bg-gray-50"
                 >
                   Sign In
                 </Link>
