@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -16,11 +17,13 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
   return (
     <header className="sticky top-0 z-50 bg-pure-white/95 backdrop-blur-sm border-b border-ice-fog">
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
-          <Link to="/" className="-m-1.5 p-1.5">
+          <Link to="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
             <span className="font-garamond text-2xl font-bold text-midnight-brief tracking-garamond">
               White Shoe
             </span>
@@ -67,10 +70,10 @@ export function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden" role="dialog" aria-modal="true">
-          <div className="fixed inset-0 z-50"></div>
+          <div className="fixed inset-0 z-50" onClick={closeMobileMenu}></div>
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-pure-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
             <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5">
+              <Link to="/" className="-m-1.5 p-1.5" onClick={closeMobileMenu}>
                 <span className="font-garamond text-xl font-bold text-midnight-brief tracking-garamond">
                   White Shoe
                 </span>
@@ -78,7 +81,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={closeMobileMenu}
                 className="-m-2.5 rounded-md p-2.5 text-midnight-brief"
               >
                 <span className="sr-only">Close menu</span>
@@ -97,7 +100,7 @@ export function Header() {
                           ? "text-slate-docket bg-ice-fog"
                           : "text-midnight-brief"
                       }`}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={closeMobileMenu}
                     >
                       {item.name}
                     </Link>
@@ -106,14 +109,14 @@ export function Header() {
                 <div className="py-6 space-y-3">
                   <Link
                     to="/signin"
-                    className="text-base font-medium text-midnight-brief hover:text-slate-docket transition-colors"
-                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-base font-medium text-midnight-brief hover:text-slate-docket transition-colors block"
+                    onClick={closeMobileMenu}
                   >
                     Sign In
                   </Link>
                   <Link
                     to="/contact"
-                    onClick={() => setMobileMenuOpen(false)}
+                    onClick={closeMobileMenu}
                   >
                     <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
                       Sign Up
