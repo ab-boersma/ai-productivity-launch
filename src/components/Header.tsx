@@ -34,12 +34,14 @@ export function Header() {
             variant="ghost"
             size="sm"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-midnight-brief"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-midnight-brief hover:bg-ice-fog transition-colors"
           >
             <span className="sr-only">Open main menu</span>
             <Menu className="h-6 w-6" aria-hidden="true" />
           </Button>
         </div>
+        
+        {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:gap-x-12">
           {navigation.map((item) => (
             <Link
@@ -67,67 +69,86 @@ export function Header() {
         </div>
       </nav>
       
-      {/* Mobile menu - fixed overlap issues */}
+      {/* Mobile Menu - Full Screen Overlay */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
-          {/* Backdrop with proper z-index */}
+          {/* Backdrop */}
           <div 
-            className="fixed inset-0 z-40 bg-black/50" 
+            className="fixed inset-0 z-40 bg-midnight-brief/20 backdrop-blur-sm transition-opacity duration-300"
             onClick={closeMobileMenu}
           />
           
-          {/* Menu Panel with solid white background and proper z-index */}
-          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-2xl">
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
-              <Link to="/" onClick={closeMobileMenu}>
-                <span className="font-garamond text-xl font-bold text-midnight-brief">
-                  White Shoe
-                </span>
-              </Link>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={closeMobileMenu}
-                className="p-2 text-midnight-brief hover:text-slate-docket"
-              >
-                <X className="h-6 w-6" />
-              </Button>
-            </div>
-            
-            {/* Navigation Links */}
-            <div className="h-full bg-white p-6">
-              <div className="space-y-2">
-                {navigation.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    onClick={closeMobileMenu}
-                    className={`block px-4 py-3 text-base font-medium rounded-lg transition-colors ${
-                      location.pathname === item.href
-                        ? "text-slate-docket bg-gray-100"
-                        : "text-midnight-brief hover:text-slate-docket hover:bg-gray-50"
-                    }`}
-                  >
-                    {item.name}
+          {/* Full Screen Menu */}
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="flex min-h-full">
+              {/* Menu Content */}
+              <div className="relative ml-auto flex w-full max-w-xs flex-col bg-pure-white shadow-2xl animate-slide-in-right">
+                
+                {/* Header Section */}
+                <div className="flex items-center justify-between px-6 py-6 border-b border-ice-fog bg-pure-white">
+                  <Link to="/" onClick={closeMobileMenu} className="flex-shrink-0">
+                    <span className="font-garamond text-xl font-bold text-midnight-brief tracking-garamond">
+                      White Shoe
+                    </span>
                   </Link>
-                ))}
-              </div>
-              
-              {/* Auth Links */}
-              <div className="mt-8 pt-6 border-t border-gray-200 space-y-4">
-                <Link
-                  to="/signin"
-                  onClick={closeMobileMenu}
-                  className="block px-4 py-3 text-base font-medium text-midnight-brief hover:text-slate-docket hover:bg-gray-50 rounded-lg transition-colors"
-                >
-                  Sign In
-                </Link>
-                <Link to="/contact" onClick={closeMobileMenu}>
-                  <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white">
-                    Sign Up
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={closeMobileMenu}
+                    className="h-10 w-10 rounded-full text-midnight-brief hover:bg-ice-fog transition-colors"
+                  >
+                    <X className="h-5 w-5" />
+                    <span className="sr-only">Close menu</span>
                   </Button>
-                </Link>
+                </div>
+                
+                {/* Navigation Section */}
+                <div className="flex-1 overflow-y-auto px-6 py-8">
+                  <nav className="space-y-2">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        onClick={closeMobileMenu}
+                        className={`group flex items-center rounded-lg px-4 py-4 text-base font-medium transition-all duration-200 ${
+                          location.pathname === item.href
+                            ? "bg-slate-docket text-pure-white shadow-sm"
+                            : "text-midnight-brief hover:bg-ice-fog hover:text-slate-docket"
+                        }`}
+                      >
+                        <span className="truncate">{item.name}</span>
+                        {location.pathname === item.href && (
+                          <div className="ml-auto h-2 w-2 rounded-full bg-pure-white" />
+                        )}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+                
+                {/* Auth Section */}
+                <div className="border-t border-ice-fog bg-pure-white px-6 py-6">
+                  <div className="space-y-4">
+                    <Link
+                      to="/signin"
+                      onClick={closeMobileMenu}
+                      className="flex w-full items-center justify-center rounded-lg border border-ice-fog px-4 py-3 text-base font-medium text-midnight-brief hover:bg-ice-fog transition-colors"
+                    >
+                      Sign In
+                    </Link>
+                    <Link to="/contact" onClick={closeMobileMenu} className="block">
+                      <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white py-3 text-base font-medium btn-ripple">
+                        Get Started
+                      </Button>
+                    </Link>
+                  </div>
+                  
+                  {/* Footer Info */}
+                  <div className="mt-6 pt-4 border-t border-ice-fog">
+                    <p className="text-xs text-slate-docket/60 text-center">
+                      © 2024 White Shoe AI
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
