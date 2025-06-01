@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -69,16 +70,16 @@ export function Header() {
       {/* Mobile menu - fixed overlap issues */}
       {mobileMenuOpen && (
         <div className="lg:hidden">
-          {/* Backdrop with higher z-index */}
+          {/* Backdrop with proper z-index */}
           <div 
-            className="fixed inset-0 z-50 bg-black/50" 
+            className="fixed inset-0 z-40 bg-black/50" 
             onClick={closeMobileMenu}
           />
           
-          {/* Menu Panel with solid background and highest z-index */}
-          <div className="fixed inset-y-0 right-0 z-60 w-full max-w-sm bg-pure-white shadow-2xl">
+          {/* Menu Panel with solid white background and proper z-index */}
+          <div className="fixed inset-y-0 right-0 z-50 w-full max-w-sm bg-white shadow-2xl">
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-pure-white">
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 bg-white">
               <Link to="/" onClick={closeMobileMenu}>
                 <span className="font-garamond text-xl font-bold text-midnight-brief">
                   White Shoe
@@ -95,7 +96,7 @@ export function Header() {
             </div>
             
             {/* Navigation Links */}
-            <div className="h-full bg-pure-white p-6">
+            <div className="h-full bg-white p-6">
               <div className="space-y-2">
                 {navigation.map((item) => (
                   <Link
