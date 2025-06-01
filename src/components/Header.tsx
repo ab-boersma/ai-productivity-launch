@@ -29,15 +29,21 @@ export function Header() {
             </span>
           </Link>
         </div>
+        
+        {/* Mobile menu button */}
         <div className="flex lg:hidden">
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-midnight-brief hover:bg-ice-fog transition-colors"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 text-midnight-brief hover:bg-ice-fog"
           >
-            <span className="sr-only">Open main menu</span>
-            <Menu className="h-6 w-6" aria-hidden="true" />
+            <span className="sr-only">Toggle menu</span>
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </Button>
         </div>
         
@@ -57,6 +63,8 @@ export function Header() {
             </Link>
           ))}
         </div>
+        
+        {/* Desktop Auth */}
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-x-4 lg:items-center">
           <Link to="/signin" className="flex items-center px-3 py-2 text-sm font-semibold leading-6 text-midnight-brief hover:text-slate-docket transition-colors">
             Sign In
@@ -69,86 +77,67 @@ export function Header() {
         </div>
       </nav>
       
-      {/* Mobile Menu - Full Screen Overlay */}
+      {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="lg:hidden">
+        <div className="lg:hidden fixed inset-0 z-50">
           {/* Backdrop */}
           <div 
-            className="fixed inset-0 z-40 bg-midnight-brief/20 backdrop-blur-sm transition-opacity duration-300"
+            className="fixed inset-0 bg-black/50" 
             onClick={closeMobileMenu}
           />
           
-          {/* Full Screen Menu */}
-          <div className="fixed inset-0 z-50 overflow-y-auto">
-            <div className="flex min-h-full">
-              {/* Menu Content */}
-              <div className="relative ml-auto flex w-full max-w-xs flex-col bg-pure-white shadow-2xl animate-slide-in-right">
-                
-                {/* Header Section */}
-                <div className="flex items-center justify-between px-6 py-6 border-b border-ice-fog bg-pure-white">
-                  <Link to="/" onClick={closeMobileMenu} className="flex-shrink-0">
-                    <span className="font-garamond text-xl font-bold text-midnight-brief tracking-garamond">
-                      White Shoe
-                    </span>
-                  </Link>
-                  <Button
-                    variant="ghost"
-                    size="sm"
+          {/* Menu Panel */}
+          <div className="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-xl">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b">
+              <Link to="/" onClick={closeMobileMenu}>
+                <span className="font-garamond text-xl font-bold text-midnight-brief">
+                  White Shoe
+                </span>
+              </Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={closeMobileMenu}
+                className="p-2"
+              >
+                <X className="h-5 w-5" />
+              </Button>
+            </div>
+            
+            {/* Navigation */}
+            <div className="p-6">
+              <nav className="space-y-1">
+                {navigation.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
                     onClick={closeMobileMenu}
-                    className="h-10 w-10 rounded-full text-midnight-brief hover:bg-ice-fog transition-colors"
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                      location.pathname === item.href
+                        ? "bg-slate-docket text-white"
+                        : "text-midnight-brief hover:bg-gray-100"
+                    }`}
                   >
-                    <X className="h-5 w-5" />
-                    <span className="sr-only">Close menu</span>
+                    {item.name}
+                  </Link>
+                ))}
+              </nav>
+              
+              {/* Mobile Auth */}
+              <div className="mt-8 space-y-3">
+                <Link
+                  to="/signin"
+                  onClick={closeMobileMenu}
+                  className="block w-full text-center px-4 py-3 border border-gray-300 rounded-lg text-base font-medium text-midnight-brief hover:bg-gray-50"
+                >
+                  Sign In
+                </Link>
+                <Link to="/contact" onClick={closeMobileMenu}>
+                  <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-white py-3 text-base">
+                    Get Started
                   </Button>
-                </div>
-                
-                {/* Navigation Section */}
-                <div className="flex-1 overflow-y-auto px-6 py-8">
-                  <nav className="space-y-2">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        to={item.href}
-                        onClick={closeMobileMenu}
-                        className={`group flex items-center rounded-lg px-4 py-4 text-base font-medium transition-all duration-200 ${
-                          location.pathname === item.href
-                            ? "bg-slate-docket text-pure-white shadow-sm"
-                            : "text-midnight-brief hover:bg-ice-fog hover:text-slate-docket"
-                        }`}
-                      >
-                        <span className="truncate">{item.name}</span>
-                        {location.pathname === item.href && (
-                          <div className="ml-auto h-2 w-2 rounded-full bg-pure-white" />
-                        )}
-                      </Link>
-                    ))}
-                  </nav>
-                </div>
-                
-                {/* Auth Section */}
-                <div className="border-t border-ice-fog bg-pure-white px-6 py-6">
-                  <div className="space-y-4">
-                    <Link
-                      to="/signin"
-                      onClick={closeMobileMenu}
-                      className="flex w-full items-center justify-center rounded-lg border border-ice-fog px-4 py-3 text-base font-medium text-midnight-brief hover:bg-ice-fog transition-colors"
-                    >
-                      Sign In
-                    </Link>
-                    <Link to="/contact" onClick={closeMobileMenu} className="block">
-                      <Button className="w-full bg-slate-docket hover:bg-slate-docket/90 text-pure-white py-3 text-base font-medium btn-ripple">
-                        Get Started
-                      </Button>
-                    </Link>
-                  </div>
-                  
-                  {/* Footer Info */}
-                  <div className="mt-6 pt-4 border-t border-ice-fog">
-                    <p className="text-xs text-slate-docket/60 text-center">
-                      © 2024 White Shoe AI
-                    </p>
-                  </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
