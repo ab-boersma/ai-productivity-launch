@@ -373,6 +373,153 @@ export default function Platform() {
         </div>
       </section>
 
+      {/* Firm IQ Section */}
+      <section className="py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center mb-16">
+            <Badge className="mb-6 bg-slate-docket text-pure-white">AI Configuration</Badge>
+            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
+              Firm IQ
+            </h2>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              Personalize White Shoe AI with your organization's context, style, and knowledge. 
+              Maximize AI effectiveness by configuring your organization's context across three key areas.
+            </p>
+          </div>
+
+          {/* Three Key Areas */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mb-16">
+            {/* Company Profile */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
+                    <Building className="h-6 w-6 text-pure-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-xl">Company Profile</CardTitle>
+                    <p className="text-sm text-gray-500">Foundational Context</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-6">
+                  Configure foundational context including industry sector, jurisdiction, regulatory environment, 
+                  and business structure to ensure AI responses are tailored to your organization.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Industry & sector classification</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Primary jurisdiction & regulatory framework</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Business structure & entity information</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Key compliance requirements</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Style Rules */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
+                    <FileText className="h-6 w-6 text-pure-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-xl">Style Rules</CardTitle>
+                    <p className="text-sm text-gray-500">Formatting & Preferences</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-6">
+                  Define your organization's preferred formatting, citation styles, terminology, and document 
+                  structure to ensure consistent, professional output.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Document formatting preferences</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Citation styles & legal conventions</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Preferred terminology & language</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Tone & communication style</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Knowledge Base */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket">
+                    <Database className="h-6 w-6 text-pure-white" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-xl">Knowledge Base</CardTitle>
+                    <p className="text-sm text-gray-500">Proprietary Intelligence</p>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-6">
+                  Upload and organize your proprietary documents, templates, precedents, and institutional 
+                  knowledge to create AI responses grounded in your organization's expertise.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Proprietary document library</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Template & precedent collection</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Institutional knowledge capture</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Semantic search & retrieval</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="text-center">
+            <h3 className="text-2xl font-bold text-midnight-brief mb-4">
+              Contextual AI That Knows Your Organization
+            </h3>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              Firm IQ ensures that every AI interaction is informed by your organization's unique context, style, and knowledge. 
+              The result is AI assistance that feels native to your practice, speaks your language, and understands your specific needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* White Shoe Associates Section */}
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
