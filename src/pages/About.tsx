@@ -143,18 +143,14 @@ export default function About() {
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 lg:gap-24 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl mb-6">
-                White-Shoe Calibre, Startup Speed
+                White Shoe Power, Startup Speed
               </h2>
               <p className="text-lg text-gray-600 mb-6">
                 Our name reflects our commitment to delivering the highest quality legal AI tools 
-                with the agility and innovation of a startup. We combine decades of legal expertise 
-                with cutting-edge technology to create solutions that actually work in practice.
+                with the agility, speed, and accessibility that businesses need. We combine decades of legal expertise 
+                with cutting edge technology to create solutions that actually work in your practice.
               </p>
               <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                  <Award className="h-5 w-5 text-slate-docket" />
-                  <span className="text-sm font-medium">SOC 2 Certified</span>
-                </div>
                 <div className="flex items-center gap-2">
                   <Lightbulb className="h-5 w-5 text-slate-docket" />
                   <span className="text-sm font-medium">AI Innovation</span>
@@ -165,16 +161,16 @@ export default function About() {
               <h3 className="text-xl font-bold mb-4">By the Numbers</h3>
               <div className="space-y-4">
                 <div>
-                  <p className="text-3xl font-bold">15+</p>
-                  <p className="text-sm opacity-90">Years combined legal experience</p>
+                  <p className="text-3xl font-bold">20+</p>
+                  <p className="text-sm opacity-90">Years combined legal expertise</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold">100+</p>
-                  <p className="text-sm opacity-90">Beta testers and counting</p>
+                  <p className="text-3xl font-bold">10x</p>
+                  <p className="text-sm opacity-90">Productivity for lawyers</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-bold">99.9%</p>
-                  <p className="text-sm opacity-90">Platform uptime guarantee</p>
+                  <p className="text-3xl font-bold">100%</p>
+                  <p className="text-sm opacity-90">Enabler for lawyers</p>
                 </div>
               </div>
             </div>
