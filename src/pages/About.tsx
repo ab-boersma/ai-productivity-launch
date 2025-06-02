@@ -192,7 +192,7 @@ export default function About() {
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link to="/contact">
                 <Button className="bg-slate-docket hover:bg-slate-docket/90 text-pure-white px-8 py-3 text-lg btn-ripple">
-                  Get a Demo
+                  Sign Up
                 </Button>
               </Link>
               <Link to="/platform" className="text-sm font-semibold leading-6 text-gray-300 hover:text-pure-white transition-colors">
