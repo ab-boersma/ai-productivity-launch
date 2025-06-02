@@ -56,28 +56,24 @@ const protectionMeasures = [
 
 const faqs = [
   {
-    question: "Do you train AI models on our data?",
-    answer: "No, never. We use a zero-knowledge architecture where your data is processed for your specific requests only and is never used to train or improve our AI models. Your confidential information remains completely private."
+    question: "Where is my data stored?",
+    answer: "Your data is stored with secure cloud providers whose data centers are located in the United States. These providers maintain their own compliance certifications, including SOC 2."
   },
   {
-    question: "Where is our data stored?",
-    answer: "Data is stored in SOC 2 certified data centers with multiple geographic options. Enterprise customers can choose specific regions or opt for on-premise deployment for complete control."
+    question: "How do you handle data retention?",
+    answer: "We retain your data for as long as you maintain an active account. You can request data deletion at any time, and we'll comply with applicable regulations regarding data retention and deletion."
   },
   {
-    question: "How do you handle data deletion?",
-    answer: "Data is automatically deleted according to your retention policies. You can request immediate deletion at any time. We provide cryptographic proof of deletion for compliance requirements."
+    question: "How do you handle security incidents?",
+    answer: "We have a responsive incident handling process in place. In the event of a security incident, we'll promptly notify affected customers and take appropriate measures to address the issue in accordance with our privacy policy."
   },
   {
-    question: "What access controls are available?",
-    answer: "We provide role-based access control with granular permissions, single sign-on (SSO) integration, multi-factor authentication (MFA), and comprehensive audit logging of all user actions."
+    question: "What compliance certifications do you have?",
+    answer: "White Shoe is currently working toward formal certifications. We've designed our systems with GDPR and CCPA/CPRA principles in mind, and we utilize infrastructure providers who maintain their own compliance certifications such as SOC 2, ISO 27001, and others."
   },
   {
-    question: "How often are security audits performed?",
-    answer: "We undergo annual SOC 2 audits, quarterly penetration testing, and continuous security monitoring. Enterprise customers can request additional audits or provide their own security assessments."
-  },
-  {
-    question: "What happens in case of a security incident?",
-    answer: "We have a comprehensive incident response plan with immediate notification protocols. All incidents are contained, investigated, and reported according to regulatory requirements and customer agreements."
+    question: "Do you offer custom security arrangements for enterprises?",
+    answer: "Yes. For enterprise customers, we're happy to discuss specific security requirements and can work with you to address particular compliance needs through custom agreements and security measures."
   }
 ];
 
