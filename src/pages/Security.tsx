@@ -1,4 +1,3 @@
-
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -52,29 +51,6 @@ const protectionMeasures = [
     icon: Shield,
     title: "Privacy By Design",
     description: "Security and privacy considerations are built into our development process from the start."
-  }
-];
-
-const certifications = [
-  {
-    name: "SOC 2 Type II",
-    description: "Security, availability, and confidentiality controls",
-    status: "Certified"
-  },
-  {
-    name: "GDPR Compliance",
-    description: "European data protection regulation compliance",
-    status: "Compliant"
-  },
-  {
-    name: "CCPA Compliance", 
-    description: "California Consumer Privacy Act compliance",
-    status: "Compliant"
-  },
-  {
-    name: "ISO 27001",
-    description: "Information security management standard",
-    status: "In Progress"
   }
 ];
 
@@ -247,48 +223,6 @@ export default function Security() {
                 </Card>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="py-24 sm:py-32 bg-ice-fog">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Certifications & Compliance
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              We maintain the highest standards of security and compliance across global regulations.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {certifications.map((cert) => (
-              <Card key={cert.name} className="text-center hover:shadow-lg transition-shadow">
-                <CardContent className="pt-6">
-                  <div className="flex items-center justify-center mb-4">
-                    {cert.status === "Certified" || cert.status === "Compliant" ? (
-                      <CheckCircle className="h-8 w-8 text-green-600" />
-                    ) : (
-                      <AlertTriangle className="h-8 w-8 text-yellow-600" />
-                    )}
-                  </div>
-                  <h3 className="text-lg font-semibold text-midnight-brief mb-2">
-                    {cert.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-3">
-                    {cert.description}
-                  </p>
-                  <Badge 
-                    variant={cert.status === "In Progress" ? "secondary" : "outline"}
-                    className={cert.status !== "In Progress" ? "bg-green-100 text-green-800" : ""}
-                  >
-                    {cert.status}
-                  </Badge>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
