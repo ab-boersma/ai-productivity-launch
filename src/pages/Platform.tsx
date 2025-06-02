@@ -38,7 +38,8 @@ import {
   Lightbulb,
   BarChart,
   FileSearch,
-  Handshake
+  Handshake,
+  Mail
 } from "lucide-react";
 
 // All Associates data organized by practice area
@@ -810,77 +811,164 @@ export default function Platform() {
           <div className="mx-auto max-w-2xl text-center mb-16">
             <Badge className="mb-6 bg-slate-docket text-pure-white">Platform Connectivity</Badge>
             <h2 className="text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-              Seamless Integrations
+              Core Platform Integrations
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
-              Connect with tools your team already uses. Native integrations and powerful APIs.
+              Connect with the tools your legal team relies on. Direct integrations for enhanced workflow automation.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Plug className="h-6 w-6 text-slate-docket" />
-                  Native Integrations
-                </CardTitle>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 xl:grid-cols-4">
+            {/* Carta Integration */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket mx-auto mb-4">
+                  <Briefcase className="h-6 w-6 text-pure-white" />
+                </div>
+                <CardTitle className="text-xl">Carta Integration</CardTitle>
                 <CardDescription>
-                  Connect with tools your team already uses
+                  Cap Table & Equity Monitoring
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center gap-2 p-3 border rounded-lg">
-                    <Slack className="h-5 w-5" />
-                    <span className="text-sm">Slack</span>
-                  </div>
-                  <div className="flex items-center gap-2 p-3 border rounded-lg">
-                    <MessageSquare className="h-5 w-5" />
-                    <span className="text-sm">Microsoft Teams</span>
-                  </div>
-                  <div className="flex items-center gap-2 p-3 border rounded-lg">
-                    <Zap className="h-5 w-5" />
-                    <span className="text-sm">Zapier</span>
-                  </div>
-                  <div className="flex items-center gap-2 p-3 border rounded-lg">
-                    <Code className="h-5 w-5" />
-                    <span className="text-sm">REST API</span>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600">
-                  Plus integrations with popular CLM systems, document repositories, and legal tech platforms.
+                <p className="text-gray-600 mb-6 text-sm">
+                  Connect to Carta to monitor cap table changes and equity plan details. Automate compliance tracking and receive alerts for important updates.
                 </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Cap table monitoring</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Equity plan tracking</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Compliance alerts</span>
+                  </li>
+                </ul>
+                <Button variant="outline" size="sm" className="w-full">
+                  Connect Carta
+                </Button>
               </CardContent>
             </Card>
 
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-3">
-                  <Code className="h-6 w-6 text-slate-docket" />
-                  API & Webhooks
-                </CardTitle>
+            {/* Slack Integration */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket mx-auto mb-4">
+                  <Slack className="h-6 w-6 text-pure-white" />
+                </div>
+                <CardTitle className="text-xl">Slack Integration</CardTitle>
                 <CardDescription>
-                  Build custom integrations with our developer-friendly API
+                  Communication Analysis
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <pre className="text-xs text-gray-600 overflow-x-auto">
-{`{
-  "query": "Review this NDA",
-  "document_id": "doc_123",
-  "response_format": "IRAC"
-}`}
-                  </pre>
-                </div>
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li>• RESTful API with OpenAPI specification</li>
-                  <li>• Webhook support for real-time updates</li>
-                  <li>• SDKs for Python, JavaScript, and more</li>
-                  <li>• Comprehensive documentation and examples</li>
+                <p className="text-gray-600 mb-6 text-sm">
+                  Connect to your Slack workspace to analyze communications for legal risks and compliance issues across all channels.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Risk detection</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Compliance monitoring</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Automated alerts</span>
+                  </li>
                 </ul>
+                <Button variant="outline" size="sm" className="w-full">
+                  Connect Slack
+                </Button>
               </CardContent>
             </Card>
+
+            {/* Gmail Integration */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket mx-auto mb-4">
+                  <Mail className="h-6 w-6 text-pure-white" />
+                </div>
+                <CardTitle className="text-xl">Gmail Integration</CardTitle>
+                <CardDescription>
+                  Email Analysis & Monitoring
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-6 text-sm">
+                  Connect to your Gmail account to analyze emails for legal exposure and ensure compliance with communication policies.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Email scanning</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Risk identification</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Policy compliance</span>
+                  </li>
+                </ul>
+                <Button variant="outline" size="sm" className="w-full">
+                  Connect Gmail
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Outlook Integration */}
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardHeader className="text-center">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-slate-docket mx-auto mb-4">
+                  <Mail className="h-6 w-6 text-pure-white" />
+                </div>
+                <CardTitle className="text-xl">Outlook Integration</CardTitle>
+                <CardDescription>
+                  Microsoft Email Analysis
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-6 text-sm">
+                  Connect to Microsoft Outlook to analyze emails for legal risks and maintain compliance across your Microsoft ecosystem.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Email monitoring</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Legal risk analysis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                    <span className="text-sm">Microsoft 365 sync</span>
+                  </li>
+                </ul>
+                <Button variant="outline" size="sm" className="w-full">
+                  Connect Outlook
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="text-center mt-16">
+            <h3 className="text-2xl font-bold text-midnight-brief mb-4">
+              Seamless Data Flow
+            </h3>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
+              These core integrations enable White Shoe AI to analyze your organization's communications and data in real-time, 
+              providing proactive risk detection and compliance monitoring across all your key platforms.
+            </p>
           </div>
         </div>
       </section>
