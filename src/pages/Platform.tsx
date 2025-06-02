@@ -834,7 +834,7 @@ export default function Platform() {
                 <p className="text-gray-600 mb-6 text-sm">
                   Connect to Carta to monitor cap table changes and equity plan details. Automate compliance tracking and receive alerts for important updates.
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <span className="text-sm">Cap table monitoring</span>
@@ -848,9 +848,6 @@ export default function Platform() {
                     <span className="text-sm">Compliance alerts</span>
                   </li>
                 </ul>
-                <Button variant="outline" size="sm" className="w-full">
-                  Connect Carta
-                </Button>
               </CardContent>
             </Card>
 
@@ -869,7 +866,7 @@ export default function Platform() {
                 <p className="text-gray-600 mb-6 text-sm">
                   Connect to your Slack workspace to analyze communications for legal risks and compliance issues across all channels.
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <span className="text-sm">Risk detection</span>
@@ -883,9 +880,6 @@ export default function Platform() {
                     <span className="text-sm">Automated alerts</span>
                   </li>
                 </ul>
-                <Button variant="outline" size="sm" className="w-full">
-                  Connect Slack
-                </Button>
               </CardContent>
             </Card>
 
@@ -904,7 +898,7 @@ export default function Platform() {
                 <p className="text-gray-600 mb-6 text-sm">
                   Connect to your Gmail account to analyze emails for legal exposure and ensure compliance with communication policies.
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <span className="text-sm">Email scanning</span>
@@ -918,9 +912,6 @@ export default function Platform() {
                     <span className="text-sm">Policy compliance</span>
                   </li>
                 </ul>
-                <Button variant="outline" size="sm" className="w-full">
-                  Connect Gmail
-                </Button>
               </CardContent>
             </Card>
 
@@ -939,7 +930,7 @@ export default function Platform() {
                 <p className="text-gray-600 mb-6 text-sm">
                   Connect to Microsoft Outlook to analyze emails for legal risks and maintain compliance across your Microsoft ecosystem.
                 </p>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="h-4 w-4 text-green-600" />
                     <span className="text-sm">Email monitoring</span>
@@ -953,9 +944,6 @@ export default function Platform() {
                     <span className="text-sm">Microsoft 365 sync</span>
                   </li>
                 </ul>
-                <Button variant="outline" size="sm" className="w-full">
-                  Connect Outlook
-                </Button>
               </CardContent>
             </Card>
           </div>
