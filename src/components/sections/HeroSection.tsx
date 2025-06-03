@@ -11,7 +11,7 @@ export function HeroSection() {
             Every Lawyer Deserves AI Support.
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Safe AI legal tools within reach for every lawyer.<br />Get equipped today.
+            Safe Legal AI tools, ready in minutes.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link to="/contact">
