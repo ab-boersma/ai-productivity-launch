@@ -12,7 +12,7 @@ export function HeroSection() {
             Accessible for Every Lawyer.
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Your AI Productivity Layer.<br />Ready When You Are.
+            The AI Productivity Layer You Need.<br />Ready When You Are.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link to="/contact">
