@@ -8,7 +8,7 @@ export function ProblemInsightSection() {
         <div className="mx-auto max-w-2xl lg:text-center">
           <h2 className="text-base font-semibold leading-7 text-slate-docket">The AI Divide</h2>
           <p className="mt-2 text-3xl font-bold tracking-garamond text-midnight-brief sm:text-4xl">
-            Less than 10% of mid-market legal teams can afford current AI tools
+            Less than 10% of mid-market legal teams can access current AI tools
           </p>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             While BigLaw firms spend millions on AI infrastructure, smaller legal teams are left behind. 
