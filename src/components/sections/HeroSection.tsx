@@ -8,7 +8,7 @@ export function HeroSection() {
       <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
         <div className="text-center animate-fade-up">
           <h1 className="text-4xl font-bold tracking-garamond text-midnight-brief sm:text-6xl">
-            Your AI Legal Support – ready in minutes, priced for every legal team
+            Your AI Legal Support – ready in minutes, accessible for every legal team
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
             Safe AI legal tools within reach for every lawyer.<br />Get equipped today.
