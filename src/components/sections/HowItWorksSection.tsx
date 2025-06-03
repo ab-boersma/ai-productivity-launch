@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
@@ -10,7 +11,7 @@ const features = [
     description: "Chat models tuned to your specific discipline for answers that hit the mark." 
   },
   { 
-    title: "Business-Savvy Responses", 
+    title: "Firm IQ", 
     description: "Outputs echo your team's voice and priorities—always context-aware." 
   },
   { 
