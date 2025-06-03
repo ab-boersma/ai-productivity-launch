@@ -1,10 +1,9 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 
 const features = [
   { 
     title: "Accessible AI", 
-    description: "Enterprise-grade legal support at a starting price every lawyer can access." 
+    description: "Enterprise-grade AI support to boost productivity for every lawyer." 
   },
   { 
     title: "Practice-Area Precision", 
